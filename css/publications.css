@@ -1,0 +1,71 @@
+/* Filters */
+.publications__filters { display: flex; flex-wrap: wrap; gap: var(--space-sm); margin-bottom: var(--space-xl); }
+.filter-btn { font-family: var(--font-body); font-size: 0.85rem; font-weight: 500; padding: var(--space-sm) var(--space-md); background: var(--color-bg-card); color: var(--color-text-muted); border: 1px solid var(--color-border); border-radius: var(--radius-md); cursor: pointer; transition: all var(--transition-fast); }
+.filter-btn:hover { background: var(--color-bg-hover); color: var(--color-text); }
+.filter-btn--active { background: var(--color-accent); color: var(--color-bg); border-color: var(--color-accent); }
+.filter-btn[data-filter="journal"].filter-btn--active { background: #3fb950; border-color: #3fb950; }
+.filter-btn[data-filter="conference"].filter-btn--active { background: #7c6aef; border-color: #7c6aef; }
+
+/* Year groups */
+.year-group { margin-bottom: var(--space-2xl); }
+.year-group:last-child { margin-bottom: 0; }
+.year-group.hidden { display: none; }
+.year-heading { font-family: var(--font-mono); font-size: 1.5rem; font-weight: 600; color: var(--color-accent); margin-bottom: var(--space-lg); padding-bottom: var(--space-sm); border-bottom: 1px solid var(--color-border); }
+
+/* Publication cards */
+.publication--full { padding: var(--space-lg); background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-md); margin-bottom: var(--space-md); transition: border-color var(--transition-fast); }
+.publication--full:hover { border-color: var(--color-accent); }
+.publication--full:last-child { margin-bottom: 0; }
+.publication--full.hidden { display: none; }
+
+.publication__header { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-sm); margin-bottom: var(--space-sm); }
+.publication__type { display: inline-block; font-family: var(--font-mono); font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.05em; padding: 2px var(--space-sm); border-radius: var(--radius-sm); }
+.publication__type--journal { background: rgba(63, 185, 80, 0.15); color: #3fb950; }
+.publication__type--conference { background: rgba(124, 106, 239, 0.15); color: #7c6aef; }
+
+.publication__title--full { font-size: 1.1rem; font-weight: 600; margin-bottom: var(--space-sm); color: var(--color-text); line-height: 1.4; }
+.publication__title--full a { color: var(--color-text); text-decoration: none; transition: color var(--transition-fast); }
+.publication__title--full a:hover { color: var(--color-accent); }
+
+.publication__authors--full { font-size: 0.9rem; color: var(--color-text-muted); margin-bottom: var(--space-xs); }
+.publication__authors--full strong { color: var(--color-accent); font-weight: 600; }
+
+.publication__venue--full { font-size: 0.9rem; font-style: italic; color: var(--color-text-subtle); }
+
+.publication__meta { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-md); margin-top: var(--space-sm); padding-top: var(--space-sm); border-top: 1px solid var(--color-border-light); }
+
+.publication__project { display: inline-flex; align-items: center; gap: var(--space-xs); font-size: 0.8rem; color: var(--color-text-muted); }
+.publication__project a { color: var(--color-accent); text-decoration: none; }
+.publication__project a:hover { text-decoration: underline; }
+.publication__project svg { width: 14px; height: 14px; opacity: 0.7; }
+
+.publication__note { font-size: 0.8rem; color: var(--color-text-subtle); }
+
+/* No results message */
+.no-results { text-align: center; padding: var(--space-2xl); color: var(--color-text-muted); display: none; }
+.no-results.visible { display: block; }
+
+.page-header__scholar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  color: var(--color-text-muted);
+  transition: all var(--transition-fast);
+  margin-left: var(--space-md);
+  vertical-align: middle;
+  position: relative;
+  top: -4px;
+}
+
+.page-header__scholar:hover {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  color: var(--color-bg);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(232, 168, 73, 0.25);
+}

@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Scholarships and Awards - Nathan Wallace">
+  <title>Scholarships & Awards | Nathan Wallace</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤖</text></svg>">
+  <style>
+    .page-header { padding-top: calc(64px + var(--space-3xl)); padding-bottom: var(--space-2xl); background: var(--color-bg-elevated); border-bottom: 1px solid var(--color-border-light); }
+    .page-header h1 { margin-bottom: var(--space-sm); }
+    .page-header p { font-size: 1.1rem; max-width: 600px; }
+    .awards-page { padding: var(--space-3xl) 0; }
+    .back-link { display: inline-flex; align-items: center; gap: var(--space-sm); font-size: 0.9rem; color: var(--color-text-muted); margin-bottom: var(--space-lg); }
+    .back-link:hover { color: var(--color-accent); }
+    .back-link svg { transition: transform var(--transition-fast); }
+    .back-link:hover svg { transform: translateX(-4px); }
+    
+    /* Awards List */
+    .awards-list { display: flex; flex-direction: column; gap: var(--space-lg); }
+    
+    .award-item { 
+      display: grid; 
+      grid-template-columns: 100px 1fr; 
+      gap: var(--space-xl); 
+      padding: var(--space-lg); 
+      background: var(--color-bg-card); 
+      border: 1px solid var(--color-border); 
+      border-radius: var(--radius-md); 
+      transition: border-color var(--transition-fast);
+    }
+    .award-item:hover { border-color: var(--color-accent); }
+    
+    .award-item__year { 
+      font-family: var(--font-mono); 
+      font-size: 0.9rem; 
+      color: var(--color-accent); 
+      padding-top: 2px;
+    }
+    
+    .award-item__content h3 { 
+      font-size: 1.1rem; 
+      margin-bottom: var(--space-xs); 
+      display: flex;
+      align-items: center;
+      gap: var(--space-sm);
+    }
+    
+    .award-item__content h3 svg {
+      color: var(--color-accent);
+      flex-shrink: 0;
+    }
+    
+    .award-item__description { 
+      font-size: 0.95rem; 
+      color: var(--color-text-muted); 
+      margin-bottom: var(--space-xs);
+    }
+    
+    .award-item__value { 
+      font-family: var(--font-mono);
+      font-size: 0.85rem; 
+      color: var(--color-text-subtle);
+    }
+    
+    .award-type { 
+      display: inline-block; 
+      font-family: var(--font-mono); 
+      font-size: 0.7rem; 
+      text-transform: uppercase; 
+      letter-spacing: 0.05em; 
+      padding: 2px var(--space-sm); 
+      border-radius: var(--radius-sm); 
+      margin-bottom: var(--space-md);
+    }
+    .award-type--scholarship { background: rgba(63, 185, 80, 0.15); color: #3fb950; }
+    .award-type--award { background: rgba(232, 168, 73, 0.15); color: var(--color-accent); }
+    .award-type--fellowship { background: rgba(124, 106, 239, 0.15); color: #7c6aef; }
+    
+    @media (max-width: 600px) {
+      .award-item { 
+        grid-template-columns: 1fr; 
+        gap: var(--space-sm); 
+      }
+      .award-item__year { padding-top: 0; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="container nav__inner">
+      <a href="index.html" class="nav__logo">Dr. Nathan Wallace</a>
+      <button class="nav__toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+      <ul class="nav__links">
+        <li><a href="index.html#about" class="nav__link">About</a></li>
+        <li><a href="index.html#education" class="nav__link">Education</a></li>
+        <li><a href="index.html#skills" class="nav__link">Skills</a></li>
+        <li><a href="projects.html" class="nav__link">Projects</a></li>
+        <li><a href="publications.html" class="nav__link">Publications</a></li>
+        <li><a href="index.html#contact" class="nav__link">Contact</a></li>
+        <li><a href="https://media.githubusercontent.com/media/ndwallace/CV/refs/heads/main/CV_NathanWallace.pdf" class="btn btn--small btn--primary">Resume</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="page-header">
+    <div class="container">
+      <a href="index.html#education" class="back-link">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+        Back to Education
+      </a>
+      <h1>Scholarships & Awards</h1>
+      <p>Recognition and funding received throughout my academic and research career.</p>
+    </div>
+  </header>
+
+  <section class="awards-page">
+    <div class="container container--narrow">
+      
+      <div class="awards-list">
+        
+        <article class="award-item">
+          <div class="award-item__year">2016 – 2020</div>
+          <div class="award-item__content">
+            <span class="award-type award-type--scholarship">Scholarship</span>
+            <h3>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"></path><path d="M2 17l10 5 10-5"></path><path d="M2 12l10 5 10-5"></path></svg>
+              Research Training Program Stipend
+            </h3>
+            <p class="award-item__description">Competitive PhD scholarship supporting doctoral research in robotics at the Australian Centre for Robotics, University of Sydney.</p>
+            <p class="award-item__value">~$25,000 AUD per annum for 3.5 years</p>
+          </div>
+        </article>
+        
+        <article class="award-item">
+          <div class="award-item__year">2016</div>
+          <div class="award-item__content">
+            <span class="award-type award-type--award">Award</span>
+            <h3>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+              Best Poster Award — APT&M Conference
+            </h3>
+            <p class="award-item__description">Winner of Best Poster Award at the Atom Probe Tomography & Microscopy 2016 conference for work titled "Enhanced Detection of Crystallographic Information in Field Desorption Maps".</p>
+          </div>
+        </article>
+        
+        <article class="award-item">
+          <div class="award-item__year">2013 – 2014</div>
+          <div class="award-item__content">
+            <span class="award-type award-type--scholarship">Scholarship</span>
+            <h3>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+              Qantas Engineering Summer School
+            </h3>
+            <p class="award-item__description">Competitive summer program combining engineering projects with industry exposure at Qantas.</p>
+            <p class="award-item__value">$6,500 AUD — 10 weeks</p>
+          </div>
+        </article>
+        
+        <article class="award-item">
+          <div class="award-item__year">2013 – 2014</div>
+          <div class="award-item__content">
+            <span class="award-type award-type--scholarship">Scholarship</span>
+            <h3>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
+              Materials and Structures Research Cluster Summer Research Scholarship
+            </h3>
+            <p class="award-item__description">Competitive research scholarship for undergraduate summer research in materials science.</p>
+            <p class="award-item__value">$4,500 AUD — 6 weeks</p>
+          </div>
+        </article>
+        
+        <article class="award-item">
+          <div class="award-item__year">2013</div>
+          <div class="award-item__content">
+            <span class="award-type award-type--award">Award</span>
+            <h3>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+              Microsoft Research Prize for Multimedia Technologies
+            </h3>
+            <p class="award-item__description">Awarded based on the most outstanding performance in senior units of study in the field of multimedia technologies at the University of Sydney.</p>
+          </div>
+        </article>
+        
+        <article class="award-item">
+          <div class="award-item__year">2010 – 2011</div>
+          <div class="award-item__content">
+            <span class="award-type award-type--scholarship">Scholarship</span>
+            <h3>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
+              Summer Vacation Scholarship
+            </h3>
+            <p class="award-item__description">Undergraduate research scholarship supporting summer research experience.</p>
+            <p class="award-item__value">$3,600 AUD — 6 weeks</p>
+          </div>
+        </article>
+        
+      </div>
+      
+    </div>
+  </section>
+
+  <footer class="footer"><div class="container"><p>© 2025 Nathan Wallace. Built with care.</p></div></footer>
+</body>
+</html>

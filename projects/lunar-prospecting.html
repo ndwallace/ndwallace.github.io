@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Intelligent Lunar Prospecting - ASA-funded algorithms for lunar rover missions.">
+  <title>Intelligent Lunar Prospecting | Nathan Wallace</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
+  <!-- Below PHP versioning to workaround aggressive browser caching -->
+  <link rel="stylesheet" href="../css/style.css?<?php echo filemtime('../css/style.css') ?>"/>
+  <link rel="stylesheet" href="../css/project.css?<?php echo filemtime('../css/project.css') ?>"/>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤖</text></svg>">
+</head>
+<body>
+  <nav class="nav">
+    <div class="container nav__inner">
+      <a href="../index.html" class="nav__logo">Dr. Nathan Wallace</a>
+      <button class="nav__toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+      <ul class="nav__links">
+        <li><a href="../index.html#about" class="nav__link">About</a></li>
+        <li><a href="../index.html#education" class="nav__link">Education</a></li>
+        <li><a href="../index.html#skills" class="nav__link">Skills</a></li>
+        <li><a href="../projects.html" class="nav__link">Projects</a></li>
+        <li><a href="../publications.html" class="nav__link">Publications</a></li>
+        <li><a href="../index.html#contact" class="nav__link">Contact</a></li>
+        <li><a href="https://media.githubusercontent.com/media/ndwallace/CV/refs/heads/main/CV_NathanWallace.pdf" class="btn btn--small btn--primary">Resume</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <article class="project-detail">
+    <header class="project-hero">
+      <div class="container">
+        <a href="../projects.html" class="back-link">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+          All Projects
+        </a>
+        <div class="project-hero__inner">
+          <div class="project-hero__content">
+            <span class="project-hero__domain project-hero__domain--space">Space</span>
+            <h1>Intelligent Lunar Prospecting</h1>
+            <p class="project-hero__summary">Developing intelligent prospecting algorithms for lunar rover missions under an Australian Space Agency Moon to Mars Feasibility grant, enabling efficient resource exploration on the lunar surface.</p>
+            <div class="project-hero__meta">
+              <div class="meta-item"><span class="meta-item__label">Role</span><span class="meta-item__value">Lead Author & Researcher</span></div>
+              <div class="meta-item"><span class="meta-item__label">Timeline</span><span class="meta-item__value">2021 – 2022</span></div>
+              <div class="meta-item"><span class="meta-item__label">Partners</span><span class="meta-item__value">Australian Space Agency</span></div>
+              <div class="meta-item"><span class="meta-item__label">Team</span><span class="meta-item__value">5+ Engineers</span></div>
+            </div>
+          </div>
+          <div class="project-hero__image">
+            <div class="project-hero__image-wrapper">
+              <img src="../images/lunar_world.png" alt="Lunar sim" style="margin-top: 0px;">
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    
+    <div class="project-content">
+      <div class="container">
+        <div class="project-content__inner">
+          <div class="project-body">
+            <h2>The Challenge</h2>
+            <p>Future lunar missions will need to locate and characterise resources like water ice before establishing permanent bases. However, communication delays between Earth and the Moon (up to 3 seconds round-trip) make real-time teleoperation impractical. Rovers must make intelligent decisions about where to sample and how to efficiently explore large areas with limited time and energy.</p>
+            <p>The challenge was to develop algorithms that could guide a rover to efficiently prospect an unknown environment, building accurate resource maps while minimising the number of samples required.</p>
+
+            <figure class="project-image">
+              <video src="../videos/lunar_prospect.mp4" style="width: 100%; aspect-ratio: 4 / 3;"
+                   autoplay muted loop playsinline></video>
+              <figcaption>Video of section of simulated lunar prospecting mission in digital twin environment.</figcaption>
+            </figure>
+
+            <h2>My Contribution</h2>
+            <p>I was the lead author on the successful grant application and led all R&D efforts. This included:</p>
+            <ul>
+              <li><strong>Algorithm development</strong> — Designing active learning algorithms that select optimal sampling locations based on current knowledge and uncertainty</li>
+              <li><strong>Simulation framework</strong> — Building a digital twin of the lunar prospecting scenario for algorithm development and validation</li>
+              <li><strong>Perception</strong> — Real-time traversability estimation of unstructured terrain from LiDAR data.</li>
+              <li><strong>Field demonstration</strong> — Implementing and testing the algorithms on the Swagbot robotic platform</li>
+              <li><strong>Reporting</strong> — Delivering technical reports to the Australian Space Agency on developed systems and algorithms</li>
+            </ul>
+
+            <h2>Technical Approach</h2>
+            <p>The intelligent prospecting system uses Gaussian Process models to maintain a probabilistic map of resource distribution. At each step, the algorithm selects the next sampling location that maximises expected information gain while respecting traverse constraints.</p>
+            <p>Key innovations included:</p>
+            <ul>
+              <li>Multi-objective optimisation balancing exploration (reducing uncertainty) and exploitation (characterising promising areas)</li>
+              <li>Energy-aware planning ensuring the rover can always return to base</li>
+              <li>Adaptive sampling density based on local variability</li>
+            </ul>
+
+            <figure class="project-image">
+              <video src="../videos/swagbot_lunar_sml.mp4" style="width: 100%; aspect-ratio: 22 / 9;"
+                   autoplay muted loop playsinline></video>
+              <figcaption>Video of real-time terrain traversability estimation demonstration in simulated lunar terrain seeded with boulders. Left: Visualisation of LiDAR data and the local terrain traversability estimate. Right: View of lunar sim environment in GazeboSim.</figcaption>
+            </figure>
+
+            <h2>Results & Impact</h2>
+            <p>The project successfully met all grant milestones and deliverables. The algorithms demonstrated significant improvements over naive sampling strategies, requiring fewer samples to achieve equivalent map accuracy.</p>
+            <p>This work laid the foundation for several subsequent projects in environmental monitoring, with the core algorithmic approaches now being applied in agricultural soil mapping, space mission planning, and other domains requiring efficient information gathering.</p>
+
+            <nav class="project-nav">
+              <a href="blast-hole-inspection.html">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+                Previous: Blast Hole Inspection
+              </a>
+              <a href="gnc-system.html" class="project-nav__next">
+                Next: GNC System
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </a>
+            </nav>
+          </div>
+          
+          <aside class="project-sidebar">
+            <div class="sidebar-section">
+              <h3>Technologies</h3>
+              <div class="sidebar-tags">
+                <span class="tag">Python</span>
+                <span class="tag">MATLAB</span>
+                <span class="tag">C++</span>
+                <span class="tag">Gaussian Processes</span>
+                <span class="tag">Active Learning</span>
+                <span class="tag">Simulation</span>
+                <span class="tag">ROS</span>
+              </div>
+            </div>
+            
+            <div class="sidebar-section">
+              <h3>Key Outcomes</h3>
+              <ul class="sidebar-list">
+                <li>$200k ASA grant secured</li>
+                <li>All milestones delivered</li>
+                <li>Field demonstration completed</li>
+                <li>Foundation for follow-on research</li>
+              </ul>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <footer class="footer"><div class="container"><p>© 2026 Nathan Wallace.</p></div></footer>
+  <script src="../js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="GNC for Off-Road Swerve-Steer Robots - Complete guidance, navigation and control system development.">
+  <title>GNC for Off-Road Robots | Nathan Wallace</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
+  <!-- Below PHP versioning to workaround aggressive browser caching -->
+  <link rel="stylesheet" href="../css/style.css?<?php echo filemtime('../css/style.css') ?>"/>
+  <link rel="stylesheet" href="../css/project.css?<?php echo filemtime('../css/project.css') ?>"/>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤖</text></svg>">
+</head>
+<body>
+  <nav class="nav">
+    <div class="container nav__inner">
+      <a href="../index.html" class="nav__logo">Dr. Nathan Wallace</a>
+      <button class="nav__toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+      <ul class="nav__links">
+        <li><a href="../index.html#about" class="nav__link">About</a></li>
+        <li><a href="../index.html#education" class="nav__link">Education</a></li>
+        <li><a href="../index.html#skills" class="nav__link">Skills</a></li>
+        <li><a href="../projects.html" class="nav__link">Projects</a></li>
+        <li><a href="../publications.html" class="nav__link">Publications</a></li>
+        <li><a href="../index.html#contact" class="nav__link">Contact</a></li>
+        <li><a href="https://media.githubusercontent.com/media/ndwallace/CV/refs/heads/main/CV_NathanWallace.pdf" class="btn btn--small btn--primary">Resume</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <article class="project-detail">
+    <header class="project-hero">
+      <div class="container">
+        <a href="../projects.html" class="back-link">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+          All Projects
+        </a>
+        <div class="project-hero__inner">
+          <div class="project-hero__content">
+            <span class="project-hero__domain project-hero__domain--agriculture">Agriculture</span>
+            <h1>GNC for Off-Road Swerve-Steer Robots</h1>
+            <p class="project-hero__summary">Developing a complete guidance, navigation, and control system for omni-directional wheeled mobile robots, along with a simulation-to-deployment pipeline that enabled multiple concurrent research and industry projects.</p>
+            <div class="project-hero__meta">
+              <div class="meta-item"><span class="meta-item__label">Role</span><span class="meta-item__value">Lead Developer</span></div>
+              <div class="meta-item"><span class="meta-item__label">Timeline</span><span class="meta-item__value">2020 – 2022</span></div>
+              <div class="meta-item"><span class="meta-item__label">Partners</span><span class="meta-item__value">-</span></div>
+              <div class="meta-item"><span class="meta-item__label">Team</span><span class="meta-item__value">2+ Engineers</span></div>
+            </div>
+          </div>
+          <div class="project-hero__image">
+            <div class="project-hero__image-wrapper">
+              <img src="../images/swagbot_bringelly.png" alt="Swagbot offroad" style="margin-top: 0px;">
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    
+    <div class="project-content">
+      <div class="container">
+        <div class="project-content__inner">
+          <div class="project-body">
+            <h2>The Challenge</h2>
+            <p>When conducting research across new and varied application domains, the differing requirements can often call for development of new bespoke solutions from scratch. This creates a bottleneck that is unsustainable as the number of such projects increases; development of navigation, localisation, sensor integration, and control systems consume significant development time before the actual research can begin.</p>
+            <p>Thus, our team needed a robust, reusable GNC system that could support diverse projects and their requirements—from agricultural monitoring to mining inspection to firefighting—without requiring each researcher to become an expert in low-level robot control.</p>
+
+            <figure class="project-image">
+              <video src="../videos/swagbot_marulan_fourpanel_sml.mp4" type="video/mp4" style="width: 100%; aspect-ratio: 14 / 9;"
+                   autoplay muted loop playsinline></video>
+              <figcaption>Video of the Swagbot omni-directional platform, showcasing the sensor suite and real-time terrain traversability estimation demonstration during a field test. Clockwise from top left: Visualisation of LiDAR data and the local terrain traversability estimate, view from front-mounted RGB camera, external camera recording robot navigation, view from front-mounted thermal camera. </figcaption>
+            </figure>
+
+            <h2>My Contribution</h2>
+            <p>I led the development of the entire GNC stack for our omni-directional wheeled mobile robots. This was a ground-up effort encompassing:</p>
+            <ul>
+              <li><strong>Localisation system</strong> — Fusing GPS, IMU, wheel odometry, and visual features for robust position estimation across varied terrain</li>
+              <li><strong>Path planning</strong> — Global and local planners suited to off-road environments with obstacles and terrain variations</li>
+              <li><strong>Motion control</strong> — Low-level controllers for the swerve-steer drive system, handling the unique kinematics of omni-directional locomotion</li>
+              <li><strong>Sensor integration</strong> — Unified interface for colour cameras, infrared cameras, LiDAR, and depth cameras</li>
+              <li><strong>Simulator/Digital-twin development</strong> — Developing a simulation environment mirroring the capabilities of the platform, and the properties of the operating environment.</li>
+            </ul>
+
+            <h2>Digital Twin Pipeline</h2>
+            <p>A key innovation was the simulation-to-deployment pipeline. I developed a comprehensive digital twin architecture that allowed:</p>
+            <ul>
+              <li><strong>Seamless transition</strong> — Code developed in simulation could deploy to physical hardware with minimal modification</li>
+              <li><strong>Parallel development</strong> — Multiple researchers could develop and test algorithms simultaneously without competing for robot time</li>
+              <li><strong>Rapid iteration</strong> — New features could be validated in simulation before risking hardware in the field</li>
+            </ul>
+
+            <figure class="project-image">
+              <img src="../images/digital_twin_pipeline.jpg" alt="The pipeline describing the digital twin generation process." style="margin-top: 0px;">
+              <figcaption>Digital twin generation process. Clockwise from top left: Digital twin generation pipeline, digital twin deployed in simulated environment, an example of derived traversability metrics for assessment of navigability.</figcaption>
+            </figure>
+
+            <h2>Technical Architecture</h2>
+            <p>The system was built on ROS with a modular architecture separating concerns:</p>
+            <ul>
+              <li><strong>Hardware abstraction layer</strong> — Isolated hardware-specific code, enabling the same high-level logic to run on different robot configurations</li>
+              <li><strong>Behaviour trees</strong> — Flexible task execution framework allowing complex autonomous behaviours to be composed from simpler primitives</li>
+              <li><strong>Safety systems</strong> — Multi-level safety monitoring with graceful degradation when sensors failed or obstacles appeared</li>
+            </ul>
+
+            <h2>Impact & Legacy</h2>
+            <p>This GNC system became the foundation for numerous projects at ACFR:</p>
+            <ul>
+              <li>Agricultural monitoring and pasture assessment</li>
+              <li>Blast hole inspection for Rio Tinto</li>
+              <li>Bushfire trail monitoring</li>
+              <li>Lunar prospecting algorithm development</li>
+            </ul>
+            <p>The capabilities developed were instrumental in securing ongoing research funding and enabled the team to respond quickly to new project opportunities. Rather than spending months on basic robot functionality, researchers could focus immediately on their specific research questions.</p>
+
+            <nav class="project-nav">
+              <a href="lunar-prospecting.html">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+                Previous: Lunar Prospecting
+              </a>
+              <a href="smart-foraging.html" class="project-nav__next">
+                Next: Smart Foraging
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </a>
+            </nav>
+          </div>
+          
+          <aside class="project-sidebar">
+            <div class="sidebar-section">
+              <h3>Technologies</h3>
+              <div class="sidebar-tags">
+                <span class="tag">ROS</span>
+                <span class="tag">C++</span>
+                <span class="tag">Python</span>
+                <span class="tag">Gazebo</span>
+                <span class="tag">LiDAR</span>
+                <span class="tag">GPS/RTK</span>
+                <span class="tag">OpenCV</span>
+                <span class="tag">PCL</span>
+              </div>
+            </div>
+            
+            <div class="sidebar-section">
+              <h3>Key Outcomes</h3>
+              <ul class="sidebar-list">
+                <li>Complete GNC stack developed</li>
+                <li>Digital twin pipeline created</li>
+                <li>Multi-sensor integration</li>
+                <li>Enabled 4+ major projects</li>
+                <li>Secured ongoing funding</li>
+              </ul>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <footer class="footer"><div class="container"><p>© 2026 Nathan Wallace.</p></div></footer>
+  <script src="../js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Resource-Aware Agricultural Autonomy - Long-term autonomous operation with dynamic agents.">
+  <title>Resource-Aware Agricultural Autonomy | Nathan Wallace</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
+  <!-- Below PHP versioning to workaround aggressive browser caching -->
+  <link rel="stylesheet" href="../css/style.css?<?php echo filemtime('../css/style.css') ?>"/>
+  <link rel="stylesheet" href="../css/project.css?<?php echo filemtime('../css/project.css') ?>"/>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤖</text></svg>">
+</head>
+<body>
+  <nav class="nav">
+    <div class="container nav__inner">
+      <a href="../index.html" class="nav__logo">Dr. Nathan Wallace</a>
+      <button class="nav__toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+      <ul class="nav__links">
+        <li><a href="../index.html#about" class="nav__link">About</a></li>
+        <li><a href="../index.html#education" class="nav__link">Education</a></li>
+        <li><a href="../index.html#skills" class="nav__link">Skills</a></li>
+        <li><a href="../projects.html" class="nav__link">Projects</a></li>
+        <li><a href="../publications.html" class="nav__link">Publications</a></li>
+        <li><a href="../index.html#contact" class="nav__link">Contact</a></li>
+        <li><a href="https://media.githubusercontent.com/media/ndwallace/CV/refs/heads/main/CV_NathanWallace.pdf" class="btn btn--small btn--primary">Resume</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <article class="project-detail">
+    <header class="project-hero">
+      <div class="container">
+        <a href="../projects.html" class="back-link">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+          All Projects
+        </a>
+        <div class="project-hero__inner">
+          <div class="project-hero__content">
+            <span class="project-hero__domain project-hero__domain--agriculture">Agriculture</span>
+            <h1>Resource-Aware Agricultural Autonomy</h1>
+            <p class="project-hero__summary">Developing hierarchical planning frameworks that enable long-term autonomous operation of field robots in the presence of dynamic agents like people and livestock, while managing energy and operational constraints.</p>
+            <div class="project-hero__meta">
+              <div class="meta-item"><span class="meta-item__label">Role</span><span class="meta-item__value">Co-Lead Researcher</span></div>
+              <div class="meta-item"><span class="meta-item__label">Timeline</span><span class="meta-item__value">2020 – 2022</span></div>
+              <div class="meta-item"><span class="meta-item__label">Partners</span><span class="meta-item__value">-</span></div>
+              <div class="meta-item"><span class="meta-item__label">Team</span><span class="meta-item__value">4+ Engineers</span></div>
+              <!-- <div class="meta-item"><span class="meta-item__label">Venue</span><span class="meta-item__value">IEEE T-FR</span></div>
+              <div class="meta-item"><span class="meta-item__label">Impact</span><span class="meta-item__value">33-page journal paper</span></div> -->
+            </div>
+          </div>
+          <div class="project-hero__image">
+            <div class="project-hero__image-wrapper">
+              <img src="../images/longtermauton.png" alt="Ag Autonomy" style="margin-top: 0px;">
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    
+    <div class="project-content">
+      <div class="container">
+        <div class="project-content__inner">
+          <div class="project-body">
+            <h2>The Challenge</h2>
+            <p>Agricultural environments present unique challenges for autonomous robots. Unlike controlled indoor settings, farm robots must operate for extended periods across large areas while sharing space with unpredictable agents—farm workers, livestock, and wildlife. They must also manage limited onboard energy while completing their monitoring or intervention tasks.</p>
+            <p>Existing approaches typically addressed navigation and task planning separately, without considering how dynamic agents respond to robot presence or how energy constraints affect long-term mission feasibility.</p>
+
+            <figure class="project-image">
+              <img src="../images/ag_auton_mosaic.jpg" alt="TBD" style="margin-top: 0px;">
+              <figcaption>Visual overview of project work. (a) The Swagbot platform, (b) Sensor FOVs for detection (c) Probability of detecting an agent with sensing payload (d) Prediction of agent motion and robot response</figcaption>
+            </figure>
+
+            <h2>My Contribution</h2>
+            <p>I collaborated closely with a fellow researcher to develop a hierarchical planning framework that integrates multiple levels of decision-making:</p>
+            <ul>
+              <li><strong>Strategic planning</strong> — Long-term, offline objective-based planning that determines which areas to visit and in what order</li>
+              <!-- <li><strong>Tactical planning</strong> — Online, dynamic path planning that responds to detected agents and environmental changes</li> -->
+              <li><strong>Slip-minimising estimation and control</strong> — Esimate and minimise impact of environmental slip to reduce energy consumption and improve localisation accuracy.</li>
+              <!-- <li><strong>Energy-aware execution</strong> — Continuous monitoring of energy state to ensure the robot can always return to base</li> -->
+            </ul>
+            <p>I specifically contributed my PhD work on resource-aware planning and off-road trajectory tracking control, integrating these with the dynamic path planner to achieve safe, efficient autonomous operation.</p>
+
+            <h2>Technical Approach</h2>
+            <p>The framework addresses three key challenges simultaneously:</p>
+            <ul>
+              <li><strong>Response-aware navigation</strong> — Modelling how livestock and people respond to robot motion, and planning paths that minimise disturbance while achieving objectives</li>
+              <li><strong>Energy-aware planning</strong> — Using terrain-dependent energy cost models to plan missions that respect battery constraints</li>
+              <li><strong>Hierarchical integration</strong> — Seamlessly connecting high-level task planning with low-level motion control</li>
+            </ul>
+            <p>The system uses receding-horizon optimisation at multiple timescales, allowing it to commit to near-term actions while remaining flexible about longer-term plans as new information becomes available.</p>
+
+            <figure class="project-image">
+              <img src="../images/hierarchical_system.jpg" alt="Hierarchical planning framework showing strategic and tactical layers." style="margin-top: 0px;">
+              <figcaption>Hierarchical planning framework showing strategic and tactical layers</figcaption>
+            </figure>
+
+            <h2>Field Validation</h2>
+            <p>We demonstrated the system through extensive field trials on a university-owned farm, operating the robot autonomously in paddocks with grazing cattle and occasional human presence. The trials validated that the system could:</p>
+            <ul>
+              <li>Complete monitoring missions while avoiding close encounters with people or livestock</li>
+              <li>Dynamically replan when agents moved unexpectedly</li>
+              <li>Accurately manage energy consumption across varied terrain</li>
+              <li>Operate for extended periods without human intervention</li>
+            </ul>
+
+            <h2>Results & Impact</h2>
+            <p>This work resulted in a publication in IEEE Transactions on Field Robotics, and two conference publications. The framework has influenced subsequent agricultural robotics projects at ACFR and provides a foundation for safe human-robot coexistence in unstructured environments.</p>
+            <p>The algorithms developed have applications beyond agriculture—any domain where robots must operate autonomously around dynamic agents while managing resource constraints can benefit from this hierarchical approach.</p>
+
+            <nav class="project-nav">
+              <a href="firefighting.html">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+                Previous: Firefighting
+              </a>
+              <a href="blast-hole-inspection.html" class="project-nav__next">
+                Next: Blast Hole Inspection
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </a>
+            </nav>
+          </div>
+          
+          <aside class="project-sidebar">
+            <div class="sidebar-section">
+              <h3>Technologies</h3>
+              <div class="sidebar-tags">
+                <span class="tag">ROS</span>
+                <span class="tag">Python</span>
+                <span class="tag">C++</span>
+                <span class="tag">MPC</span>
+                <span class="tag">MCTS</span>
+                <span class="tag">LSTM</span>
+                <span class="tag">Path Planning</span>
+                <span class="tag">Energy Modelling</span>
+              </div>
+            </div>
+            
+            <div class="sidebar-section">
+              <h3>Key Outcomes</h3>
+              <ul class="sidebar-list">
+                <li>IEEE T-FR publication</li>
+                <!-- <li>ISER 2021 conference paper</li> -->
+                <li>Autonomous operation with livestock</li>
+                <li>Energy-aware path tracking</li>
+              </ul>
+            </div>
+            <div class="sidebar-section">
+              <h3>Related Publications</h3>
+              <div class="sidebar-publications">
+                <div class="sidebar-pub">
+                  <span class="sidebar-pub__title"><a href="../publications.html#pub-2022-resource-aware-path-planning">Resource and Response Aware Path Planning for Long-term Autonomy of Ground Robots in Agriculture</a></span>
+                  <span class="sidebar-pub__venue">IEEE Trans. Field Robotics, 2022</span>
+                </div>
+                <div class="sidebar-pub">
+                  <span class="sidebar-pub__title"><a href="../publications.html#pub-2021-hierarchical-operating-framework">Experimental Evaluation of a Hierarchical Operating Framework for Ground Robots in Agriculture</a></span>
+                  <span class="sidebar-pub__venue">ISER, 2021</span>
+                </div>
+                <div class="sidebar-pub">
+                  <span class="sidebar-pub__title"><a href="../publications.html#pub-2020-hierarchical-farming-deployment">A Hierarchical Framework for Long-term and Robust Deployment of Field Ground Robots in Large-Scale Farming</a></span>
+                  <span class="sidebar-pub__venue">IEEE CASE, 2020</span>
+                </div>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <footer class="footer"><div class="container"><p>© 2026 Nathan Wallace.</p></div></footer>
+  <script src="../js/main.js"></script>
+</body>
+</html>

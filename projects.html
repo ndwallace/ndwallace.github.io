@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Projects by Nathan Wallace - Autonomous robotics research across space, agriculture, mining, and emergency response.">
+  <title>Projects | Nathan Wallace</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
+  <!-- Below PHP versioning to workaround aggressive browser caching -->
+  <link rel="stylesheet" href="css/style.css?<?php echo filemtime('css/style.css') ?>"/>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤖</text></svg>">
+  <style>
+    .page-header { padding-top: calc(64px + var(--space-3xl)); padding-bottom: var(--space-2xl); background: var(--color-bg-elevated); border-bottom: 1px solid var(--color-border-light); }
+    .page-header h1 { margin-bottom: var(--space-sm); }
+    .page-header p { font-size: 1.1rem; max-width: 600px; }
+    .projects-page { padding: var(--space-3xl) 0; }
+    .projects-page .projects__grid { grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); }
+    @media (max-width: 768px) { .projects-page .projects__grid { grid-template-columns: 1fr; } }
+    .back-link { display: inline-flex; align-items: center; gap: var(--space-sm); font-size: 0.9rem; color: var(--color-text-muted); margin-bottom: var(--space-lg); }
+    .back-link:hover { color: var(--color-accent); }
+    .back-link svg { transition: transform var(--transition-fast); }
+    .back-link:hover svg { transform: translateX(-4px); }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="container nav__inner">
+      <a href="index.html" class="nav__logo">Dr. Nathan Wallace</a>
+      <button class="nav__toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+      <ul class="nav__links">
+        <li><a href="index.html#about" class="nav__link">About</a></li>
+        <li><a href="index.html#education" class="nav__link">Education</a></li>
+        <li><a href="index.html#skills" class="nav__link">Skills</a></li>
+        <li><a href="projects.html" class="nav__link nav__link--active">Projects</a></li>
+        <li><a href="publications.html" class="nav__link">Publications</a></li>
+        <li><a href="index.html#contact" class="nav__link">Contact</a></li>
+        <li><a href="https://media.githubusercontent.com/media/ndwallace/CV/refs/heads/main/CV_NathanWallace.pdf" class="btn btn--small btn--primary">Resume</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="page-header">
+    <div class="container">
+      <a href="index.html" class="back-link">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+        Back to Home
+      </a>
+      <h1>Projects</h1>
+      <p>A comprehensive view of my research and development work across autonomous systems domains.</p>
+    </div>
+  </header>
+
+  <section class="projects-page">
+    <div class="container">
+      <div class="projects__filters">
+        <button class="filter-btn filter-btn--active" data-filter="all">All Projects</button>
+        <button class="filter-btn" data-filter="space">Space</button>
+        <button class="filter-btn" data-filter="agriculture">Agriculture</button>
+        <button class="filter-btn" data-filter="mining">Mining</button>
+        <button class="filter-btn" data-filter="emergency">Emergency Response</button>
+      </div>
+
+      <div class="projects__grid">
+        <!-- Scarlet-β -->
+        <article class="project-card" data-domain="space">
+          <div class="project-card__image">
+            <span class="project-card__domain project-card__domain--space">Space</span>
+            <img src="images/sb2_mission_vis.png" alt="Scarlet-β" style="margin-top: 0px;">
+          </div>
+          <div class="project-card__content">
+            <h3 class="project-card__title">Scarlet-β: Satellite Mission Autonomy</h3>
+            <p class="project-card__summary">Developed mission-level autonomy for a self- and Earth-inspection payload on the Buccaneer Main Mission cubesat. Successfully integrated with orbiting satellite and secured $450k continuation funding.</p>
+            <div class="project-card__tags"><span class="tag">Mission Planning</span><span class="tag">MCTS</span><span class="tag">SmartSat</span><span class="tag">DSTG</span></div>
+            <a href="projects/scarlet-beta.html" class="project-card__link">View Details <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a>
+          </div>
+        </article>
+
+        <!-- ISAM -->
+        <article class="project-card" data-domain="space">
+          <div class="project-card__image">
+            <span class="project-card__domain project-card__domain--space">Space</span>
+            <img src="images/basinspect.png" alt="ISAM" style="margin-top: 0px;">
+          </div>
+          <div class="project-card__content">
+            <h3 class="project-card__title">In-Orbit Servicing & Manufacturing (ISAM)</h3>
+            <p class="project-card__summary">Leading R&D of mission autonomy for automated satellite rendezvous and servicing. Collaborating across sensing, perception, dynamics, and control teams. Completed CDR and presented at IAC 2025.</p>
+            <div class="project-card__tags"><span class="tag">Rendezvous</span><span class="tag">Trajectory Optimization</span><span class="tag">SmartSat</span></div>
+            <a href="projects/isam.html" class="project-card__link">View Details <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a>
+          </div>
+        </article>
+
+        <!-- Firefighting -->
+        <article class="project-card" data-domain="emergency">
+          <div class="project-card__image">
+            <span class="project-card__domain project-card__domain--emergency">Emergency</span>
+            <img src="images/fieldwork_rfs_hrb.jpg" alt="RFS" style="margin-top: 0px;">
+          </div>
+          <div class="project-card__content">
+            <h3 class="project-card__title">Autonomous Network-Centric Firefighting</h3>
+            <p class="project-card__summary">Lead researcher integrating autonomous ground robots, drones, vehicle telemetry, and wearables for enhanced bushfire situational awareness. 15+ field trials, exhibited at RFS State Championships.</p>
+            <div class="project-card__tags"><span class="tag">Multi-Robot</span><span class="tag">Fuel Load Estimation</span><span class="tag">RFS</span></div>
+            <a href="projects/firefighting.html" class="project-card__link">View Details <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a>
+          </div>
+        </article>
+
+        <!-- Agriculture Autonomy -->
+        <article class="project-card" data-domain="agriculture">
+          <div class="project-card__image">
+            <span class="project-card__domain project-card__domain--agriculture">Agriculture</span>
+            <img src="images/longtermauton.png" alt="Ag Autonomy" style="margin-top: 0px;">
+          </div>
+          <div class="project-card__content">
+            <h3 class="project-card__title">Resource-Aware Agricultural Autonomy</h3>
+            <p class="project-card__summary">Developed hierarchical planning framework for long-term autonomous operation with dynamic agents (people, livestock) and energy constraints. Published in IEEE Transactions on Field Robotics.</p>
+            <div class="project-card__tags"><span class="tag">Path Planning</span><span class="tag">Dynamic Agents</span><span class="tag">TFR</span></div>
+            <a href="projects/agriculture-autonomy.html" class="project-card__link">View Details <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a>
+          </div>
+        </article>
+
+        <!-- Blast Hole Inspection -->
+        <article class="project-card" data-domain="mining">
+          <div class="project-card__image">
+            <span class="project-card__domain project-card__domain--mining">Mining</span>
+            <img src="images/dipper.png" alt="Dipper" style="margin-top: 0px;">
+          </div>
+          <div class="project-card__content">
+            <h3 class="project-card__title">Autonomous Blast Hole Inspection</h3>
+            <p class="project-card__summary">Led GNC development for Rio Tinto's 'Dipper' robot, achieving centimetre-accurate positioning for blast hole inspection. Demonstrated in Pilbara, deployed in Utah. Instrumental in securing $16M continuation.</p>
+            <div class="project-card__tags"><span class="tag">Precision Control</span><span class="tag">GNC</span><span class="tag">Rio Tinto</span></div>
+            <a href="projects/blast-hole-inspection.html" class="project-card__link">View Details <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a>
+          </div>
+        </article>
+
+        <!-- Lunar Prospecting -->
+        <article class="project-card" data-domain="space">
+          <div class="project-card__image">
+            <span class="project-card__domain project-card__domain--space">Space</span>
+            <img src="images/lunar_world.png" alt="Lunar sim" style="margin-top: 0px;">
+          </div>
+          <div class="project-card__content">
+            <h3 class="project-card__title">Intelligent Lunar Prospecting</h3>
+            <p class="project-card__summary">Secured $200k ASA grant for developing intelligent prospecting algorithms for lunar rover missions. Created digital twin simulation and demonstrated on Swagbot platform.</p>
+            <div class="project-card__tags"><span class="tag">ASA Grant</span><span class="tag">Active Learning</span><span class="tag">Simulation</span></div>
+            <a href="projects/lunar-prospecting.html" class="project-card__link">View Details <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a>
+          </div>
+        </article>
+
+        <!-- GNC System -->
+        <article class="project-card" data-domain="agriculture">
+          <div class="project-card__image">
+            <span class="project-card__domain project-card__domain--agriculture">Agriculture</span>
+            <img src="images/swagbot_bringelly.png" alt="Swagbot offroad" style="margin-top: 0px;">
+          </div>
+          <div class="project-card__content">
+            <h3 class="project-card__title">GNC for Off-Road Swerve-Steer Robots</h3>
+            <p class="project-card__summary">Led development of complete guidance, navigation, and control system for omni-directional wheeled mobile robots. Created simulation-to-deployment pipeline enabling multiple concurrent projects.</p>
+            <div class="project-card__tags"><span class="tag">GNC</span><span class="tag">Sensor Fusion</span><span class="tag">Digital Twin</span></div>
+            <a href="projects/gnc-system.html" class="project-card__link">View Details <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a>
+          </div>
+        </article>
+
+        <!-- R-ECPS -->
+        <article class="project-card" data-domain="agriculture">
+          <div class="project-card__image">
+            <span class="project-card__domain project-card__domain--agriculture">Agriculture</span>
+            <img src="images/recps_condensed.jpg" alt="R-ECPS" style="margin-top: 0px;">
+          </div>
+          <div class="project-card__content">
+            <h3 class="project-card__title">Robotics for Sustainable Smart Foraging</h3>
+            <p class="project-card__summary">Developed framework for capturing and conveying environment knowledge and dynamics. Applied to pasture forage monitoring for grazing livestock. Published in Journal of Field Robotics.</p>
+            <div class="project-card__tags"><span class="tag">Digital Twins</span><span class="tag">Smart Farming</span><span class="tag">JFR</span></div>
+            <a href="projects/smart-foraging.html" class="project-card__link">View Details <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a>
+          </div>
+        </article>
+
+        <!-- Multivariate Active Learning -->
+        <article class="project-card" data-domain="agriculture">
+          <div class="project-card__image">
+            <span class="project-card__domain project-card__domain--agriculture">Agriculture</span>
+            <img src="images/fieldwork_selfie.jpg" alt="Adaptive Sampling" style="margin-top: 0px;">
+          </div>
+          <div class="project-card__content">
+            <h3 class="project-card__title">Multivariate Active Learning and Adaptive Sampling</h3>
+            <p class="project-card__summary">Developed algorithms for simultaneously modelling multiple quantities of interest, leveraging relationships to maximise information gain. Published in RA-L, actively used in industry projects.</p>
+            <div class="project-card__tags"><span class="tag">Gaussian Processes</span><span class="tag">Active Learning</span><span class="tag">RA-L</span></div>
+            <a href="projects/multivariate-learning.html" class="project-card__link">View Details <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a>
+          </div>
+        </article>
+
+        <!-- PhD Work -->
+        <article class="project-card" data-domain="agriculture">
+          <div class="project-card__image">
+            <span class="project-card__domain project-card__domain--agriculture">Agriculture</span>
+            <img src="images/energyawarepp.jpg" alt="Energy-aware Path Planning" style="margin-top: 0px;">
+          </div>
+          <div class="project-card__content">
+            <h3 class="project-card__title">Energy-Aware Planning (PhD)</h3>
+            <p class="project-card__summary">Doctoral research on Efficient and safe path planning over rough terrains using terrain-dependent energy cost models and sampling-based planning techniques for long-duration autonomous missions on wheeled mobile robots.</p>
+            <div class="project-card__tags"><span class="tag">PRM Planning</span><span class="tag">ATSP</span><span class="tag">Energy-modelling</span></div>
+            <a href="projects/energy-aware-planning.html" class="project-card__link">View Details <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a>
+          </div>
+        </article>
+
+        <!-- PhD Work -->
+        <article class="project-card" data-domain="agriculture">
+          <div class="project-card__image">
+            <span class="project-card__domain project-card__domain--agriculture">Agriculture</span>
+            <img src="images/swagbot_dam.png" alt="Swagbot offroad" style="margin-top: 0px;">
+          </div>
+          <div class="project-card__content">
+            <h3 class="project-card__title">Slip-compensating Control (PhD)</h3>
+            <p class="project-card__summary">Doctoral research on receding horizon estimation and control strategies with structured noise blocking for accurate trajectory tracking of wheeled mobile robots operating in challenging off-road environments where wheel slip is prevalent.</p>
+            <div class="project-card__tags"><span class="tag">MPC</span><span class="tag">Slip Compensation</span><span class="tag">ICRA</span></div>
+            <a href="projects/rhec-slip-compensation.html" class="project-card__link">View Details <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer"><div class="container"><p>© 2026 Nathan Wallace.</p></div></footer>
+  <script src="js/main.js"></script>
+</body>
+</html>

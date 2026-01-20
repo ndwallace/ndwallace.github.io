@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="In-Orbit Servicing and Manufacturing (ISAM) - Mission autonomy for satellite rendezvous and servicing.">
+  <title>In-Orbit Servicing & Manufacturing | Nathan Wallace</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
+  <!-- Below PHP versioning to workaround aggressive browser caching -->
+  <link rel="stylesheet" href="../css/style.css?<?php echo filemtime('../css/style.css') ?>"/>
+  <link rel="stylesheet" href="../css/project.css?<?php echo filemtime('../css/project.css') ?>"/>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤖</text></svg>">
+</head>
+<body>
+  <nav class="nav">
+    <div class="container nav__inner">
+      <a href="../index.html" class="nav__logo">Dr. Nathan Wallace</a>
+      <button class="nav__toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+      <ul class="nav__links">
+        <li><a href="../index.html#about" class="nav__link">About</a></li>
+        <li><a href="../index.html#education" class="nav__link">Education</a></li>
+        <li><a href="../index.html#skills" class="nav__link">Skills</a></li>
+        <li><a href="../projects.html" class="nav__link">Projects</a></li>
+        <li><a href="../publications.html" class="nav__link">Publications</a></li>
+        <li><a href="../index.html#contact" class="nav__link">Contact</a></li>
+        <li><a href="https://media.githubusercontent.com/media/ndwallace/CV/refs/heads/main/CV_NathanWallace.pdf" class="btn btn--small btn--primary">Resume</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <article class="project-detail">
+    <header class="project-hero">
+      <div class="container">
+        <a href="../projects.html" class="back-link">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+          All Projects
+        </a>
+        <div class="project-hero__inner">
+          <div class="project-hero__content">
+            <span class="project-hero__domain project-hero__domain--space">Space</span>
+            <h1>In-Orbit Servicing & Manufacturing (ISAM)</h1>
+            <p class="project-hero__summary">Leading the development of mission autonomy for automated satellite rendezvous and servicing operations.</p>
+            <div class="project-hero__meta">
+              <div class="meta-item"><span class="meta-item__label">Role</span><span class="meta-item__value">Mission Autonomy Lead</span></div>
+              <div class="meta-item"><span class="meta-item__label">Timeline</span><span class="meta-item__value">2024 – Present</span></div>
+              <div class="meta-item"><span class="meta-item__label">Partners</span><span class="meta-item__value">SmartSat CRC, Space Machines Company,<br> ANT61, Abyss Solutions, Spiral Blue</span></div>
+              <div class="meta-item"><span class="meta-item__label">Team</span><span class="meta-item__value">10+ Researchers/Engineers</span></div>
+            </div>
+          </div>
+          <div class="project-hero__image">
+            <div class="project-hero__image-wrapper">
+              <img src="../images/basinspect.png" alt="ISAM" style="margin-top: 0px;">
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    
+    <div class="project-content">
+      <div class="container">
+        <div class="project-content__inner">
+          <div class="project-body">
+            <h2>The Challenge</h2>
+            <p>In-orbit servicing represents one of the most promising frontiers in space technology. The ability to refuel, repair, or upgrade satellites already in orbit could dramatically extend their operational lifetimes and reduce space debris. However, autonomous rendezvous and proximity operations present significant technical challenges.</p>
+            <p>A servicing satellite must detect, track, and approach a client satellite while managing its own resources and responding to unexpected situations. This requires sophisticated mission planning that integrates sensing, perception, dynamics, and control into a cohesive autonomous system.</p>
+
+            <figure class="project-image">
+              <video src="../videos/isam_finalapproach.mp4" style="width: 100%; aspect-ratio: 16 / 9;"
+                   autoplay muted loop playsinline></video>
+              <figcaption>Video of in-orbit servicing rendezvous operation simulated using Basilisk</figcaption>
+            </figure>
+
+            <h2>My Contribution</h2>
+            <p>I lead the R&D of the mission autonomy subsystem, responsible for high-level decision-making and mission planning. This involves:</p>
+            <ul>
+              <li><strong>Mission design</strong> — Developing the operational concept and defining the autonomous behaviours required for different mission phases</li>
+              <li><strong>Requirements capture</strong> — Working with industry stakeholders to define system requirements and technical roadmaps</li>
+              <li><strong>Cross-team collaboration</strong> — Interfacing with guidance, sensing, perception, dynamics, and control teams to ensure cohesive system integration</li>
+            </ul>
+            <p>The project has progressed through Mission Concept Review, System Requirements Review, Preliminary Design Review, and Critical Design Review, each delivered and presented to partners and stakeholders.</p>
+
+            <h2>Technical Approach</h2>
+            <p>The mission autonomy system provides a hierarchical planning architecture that manages the full servicing mission:</p>
+            <ul>
+              <li><strong>Strategic planning</strong> — High-level mission sequencing and resource allocation</li>
+              <li><strong>Tactical planning</strong> — Trajectory optimisation for approach and proximity operations</li>
+              <li><strong>Reactive control</strong> — Real-time response to sensor feedback and anomalies</li>
+            </ul>
+            <p>A key innovation is the integrated framework that connects mission design decisions with guidance algorithms, ensuring that high-level objectives translate into achievable trajectories while respecting all operational constraints.</p>
+
+            <figure class="project-image">
+              <img src="../images/isam_cortex.png" alt="High-level diagram of the CORTEX guidance framework." style="margin-top: 0px;">
+              <figcaption>High-level diagram of the CORTEX guidance framework for the final approach phase of rendezvous.</figcaption>
+            </figure>
+
+            <h2>Results & Impact</h2>
+            <p>The project has produced multiple publications at leading international conferences, including four papers at the 76th International Astronautical Congress (IAC 2025) covering mission design, trajectory optimisation, and system integration.</p>
+            <p>The hardware-in-the-loop testbed developed by the team enables realistic validation of autonomous rendezvous algorithms, representing a significant capability for Australian space research.</p>
+
+            <figure class="project-image">
+              <img src="../images/isam_testbeds.jpg" alt="High level state transition diagram, optical testbed and planar air-bearing testbed." style="margin-top: 0px;">
+              <figcaption>Clockwise from top left: High level system state transition diagram, the optical testbed and planar air-bearing testbed.</figcaption>
+            </figure>
+
+            <h2>Broader Significance</h2>
+            <p>ISAM capabilities are increasingly recognised as essential for sustainable space operations. By enabling satellite life extension and active debris removal, this technology addresses the growing challenge of orbital congestion while creating new commercial opportunities in the space sector.</p>
+
+            <nav class="project-nav">
+              <a href="scarlet-beta.html">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+                Previous: Scarlet-β
+              </a>
+              <a href="firefighting.html" class="project-nav__next">
+                Next: Firefighting
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </a>
+            </nav>
+          </div>
+          
+          <aside class="project-sidebar">
+            <div class="sidebar-section">
+              <h3>Technologies</h3>
+              <div class="sidebar-tags">
+                <span class="tag">Python</span>
+                <span class="tag">Trajectory Optimisation</span>
+                <span class="tag">Convex Optimisation</span>
+                <!-- <span class="tag">Rendezvous</span> -->
+                <span class="tag">Mission Planning</span>
+                <span class="tag">HWIL Testing</span>
+                <span class="tag">Systems Engineering</span>
+              </div>
+            </div>
+            
+            <div class="sidebar-section">
+              <h3>Key Outcomes</h3>
+              <ul class="sidebar-list">
+                <li>Completed CDR milestone</li>
+                <li>4 papers at IAC 2025</li>
+                <li>HWIL testbed developed</li>
+                <li>Presented at i-SAIRAS 2024</li>
+              </ul>
+            </div>
+            
+            <div class="sidebar-section">
+              <h3>Related Publications</h3>
+              <div class="sidebar-publications">
+                <div class="sidebar-pub">
+                  <span class="sidebar-pub__title"><a href="../publications.html#pub-2025-grasp-mission-framework">GRASP: An Integrated Framework for Mission Design and Guidance for Autonomous In-Orbit Servicing Missions</a></span>
+                  <span class="sidebar-pub__venue">IAC 2025</span>
+                </div>
+                <div class="sidebar-pub">
+                  <span class="sidebar-pub__title"><a href="../publications.html#pub-2025-cortex-trajectory-guidance">CORTEX: Real-Time Trajectory Optimization and Guidance for the Final Approach Phase of In-Orbit Servicing Missions</a></span>
+                  <span class="sidebar-pub__venue">IAC 2025</span>
+                </div>
+                <div class="sidebar-pub">
+                  <span class="sidebar-pub__title"><a href="../publications.html#pub-2025-isam-system-design">System Design and Hardware-In-The-Loop Testbed Development for an Australian ISAM Demonstrator Mission</a></span>
+                  <span class="sidebar-pub__venue">IAC 2025</span>
+                </div>
+                <div class="sidebar-pub">
+                  <span class="sidebar-pub__title"><a href="../publications.html#pub-2024-isam-robotic-satellite">Robotic Satellite for ISAM: Design, Development, and Initial Results</a></span>
+                  <span class="sidebar-pub__venue">i-SAIRAS 2024</span>
+                </div>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <footer class="footer"><div class="container"><p>© 2026 Nathan Wallace.</p></div></footer>
+  <script src="../js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Publications by Nathan Wallace - Peer-reviewed research in robotics, autonomous systems, and field robotics.">
+  <title>Publications | Nathan Wallace</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
+  <!-- Below PHP versioning to workaround aggressive browser caching -->
+  <link rel="stylesheet" href="css/style.css?<?php echo filemtime('css/style.css') ?>"/>
+  <link rel="stylesheet" href="css/publications.css?<?php echo filemtime('css/publications.css') ?>"/>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤖</text></svg>">
+  <style>
+    .page-header { padding-top: calc(64px + var(--space-3xl)); padding-bottom: var(--space-2xl); background: var(--color-bg-elevated); border-bottom: 1px solid var(--color-border-light); }
+    .page-header h1 { margin-bottom: var(--space-sm); }
+    .page-header p { font-size: 1.1rem; max-width: 600px; }
+    .publications-page { padding: var(--space-3xl) 0; }
+    .back-link { display: inline-flex; align-items: center; gap: var(--space-sm); font-size: 0.9rem; color: var(--color-text-muted); margin-bottom: var(--space-lg); }
+    .back-link:hover { color: var(--color-accent); }
+    .back-link svg { transition: transform var(--transition-fast); }
+    .back-link:hover svg { transform: translateX(-4px); }
+
+    .publication--full {
+      scroll-margin-top: 70px; /* navbar height + a little breathing room */
+    }
+
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="container nav__inner">
+      <a href="index.html" class="nav__logo">Dr. Nathan Wallace</a>
+      <button class="nav__toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+      <ul class="nav__links">
+        <li><a href="index.html#about" class="nav__link">About</a></li>
+        <li><a href="index.html#education" class="nav__link">Education</a></li>
+        <li><a href="index.html#skills" class="nav__link">Skills</a></li>
+        <li><a href="projects.html" class="nav__link">Projects</a></li>
+        <li><a href="publications.html" class="nav__link nav__link--active">Publications</a></li>
+        <li><a href="index.html#contact" class="nav__link">Contact</a></li>
+        <li><a href="https://media.githubusercontent.com/media/ndwallace/CV/refs/heads/main/CV_NathanWallace.pdf" class="btn btn--small btn--primary">Resume</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="page-header">
+    <div class="container">
+      <a href="index.html" class="back-link">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+        Back to Home
+      </a>
+      <h1>Publications&ensp;<a href="https://scholar.google.com/citations?hl=en&user=MIL9lxcAAAAJ" target="_blank" rel="noopener" class="page-header__scholar" title="View on Google Scholar"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 14l9-5-9-5-9 5 9 5z"></path><path d="M12 14l6.16-3.422a12.083 12.083 0 0 1 .665 6.479A11.952 11.952 0 0 0 12 20.055a11.952 11.952 0 0 0-6.824-2.998 12.078 12.078 0 0 1 .665-6.479L12 14z"></path><path d="M20 10v6"></path><circle cx="20" cy="18" r="2"></circle></svg></a></h1>
+      <p>Peer-reviewed research in robotics, autonomous systems, and field robotics.</p>
+      <p style="font-size: medium"><br><i>* indicates equal <a href="#test" class="nav__link">contribution</a>.</i></p>
+    </div>
+  </header>
+
+  <section class="publications-page">
+    <div class="container container--narrow">
+      
+      <!-- Filters -->
+      <div class="publications__filters">
+        <button class="filter-btn filter-btn--active" data-filter="all">All Publications</button>
+        <button class="filter-btn" data-filter="journal">Journals</button>
+        <button class="filter-btn" data-filter="conference">Conferences</button>
+      </div>
+      
+      <div class="no-results">No publications match the selected filter.</div>
+      
+      <!-- 2025 -->
+      <div class="year-group" data-year="2025">
+        <h2 class="year-heading">2025</h2>
+        
+        <article class="publication--full" data-type="conference" id="pub-2025-distributed-mission-planning">
+          <div class="publication__header">
+            <span class="publication__type publication__type--conference">Conference</span>
+          </div>
+          <h3 class="publication__title--full"><a href="https://iafastro.directory/iac/browse/IAC-25/" target="_blank" rel="noopener">Distributed Autonomous Mission Planning for Resource-Constrained Satellites: Implementation on the Buccaneer Main Mission CubeSat</a></h3>
+          <p class="publication__authors--full"><strong>N. D. Wallace</strong>, T. Ingram, H. Bennett, A. Katudia, N. Stevens, D. Lingard, S. Sukkarieh</p>
+          <p class="publication__venue--full">76th International Astronautical Congress (IAC), 2025</p>
+          <div class="publication__meta">
+            <span class="publication__project"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3h18v18H3zM12 8v8m-4-4h8"/></svg> Project: <a href="projects/scarlet-beta.html">Scarlet-β</a></span>
+          </div>
+        </article>
+        
+        <article class="publication--full" data-type="conference" id="pub-2025-grasp-mission-framework">
+          <div class="publication__header">
+            <span class="publication__type publication__type--conference">Conference</span>
+          </div>
+          <h3 class="publication__title--full"><a href="https://www.researchgate.net/publication/396085814_GRASP_An_Integrated_Framework_for_Mission_Design_and_Guidance_for_Autonomous_In-Orbit_Servicing_Missions" target="_blank" rel="noopener">GRASP: An Integrated Framework for Mission Design and Guidance for Autonomous In-Orbit Servicing Missions</a></h3>
+          <p class="publication__authors--full"><strong>N. D. Wallace*</strong>, M. C. Wijayatunga*, J. Guinane, X. Wu, S. Sukkarieh</p>
+          <p class="publication__venue--full">76th International Astronautical Congress (IAC), 2025</p>
+          <div class="publication__meta">
+            <span class="publication__project"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3h18v18H3zM12 8v8m-4-4h8"/></svg> Project: <a href="projects/isam.html">ISAM</a></span>
+          </div>
+        </article>
+        
+        <article class="publication--full" data-type="conference" id="pub-2025-cortex-trajectory-guidance">
+          <div class="publication__header">
+            <span class="publication__type publication__type--conference">Conference</span>
+          </div>
+          <h3 class="publication__title--full"><a href="https://www.researchgate.net/publication/395946792_CORTEX_Real-Time_Trajectory_Optimization_and_Guidance_for_the_Final_Approach_Phase_of_In-Orbit_Servicing_Missions" target="_blank" rel="noopener">CORTEX: Real-Time Trajectory Optimization and Guidance for the Final Approach Phase of In-Orbit Servicing Missions</a></h3>
+          <p class="publication__authors--full">M. C. Wijayatunga, <strong>N. D. Wallace</strong>, J. Guinane, X. Wu, S. Sukkarieh</p>
+          <p class="publication__venue--full">76th International Astronautical Congress (IAC), 2025</p>
+          <div class="publication__meta">
+            <span class="publication__project"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3h18v18H3zM12 8v8m-4-4h8"/></svg> Project: <a href="projects/isam.html">ISAM</a></span>
+          </div>
+        </article>
+        
+        <article class="publication--full" data-type="conference" id="pub-2025-isam-system-design">
+          <div class="publication__header">
+            <span class="publication__type publication__type--conference">Conference</span>
+          </div>
+          <h3 class="publication__title--full"><a href="https://www.researchgate.net/publication/396445091_System_Design_and_Hardware_In_The_Loop_Testbed_Development_for_an_Australian_ISAM_Demonstrator_Mission" target="_blank" rel="noopener">System Design and Hardware-In-The-Loop Testbed Development for an Australian ISAM Demonstrator Mission</a></h3>
+          <p class="publication__authors--full">J. Guinane, S. Alshammari, T. Bailey, X. Chen, D. G. Dansereau, V. Ila, J. Mehami, S. Sukkarieh, W. Thorp, <strong>N. Wallace</strong>, M. Wijayatunga, J. (G.) Wu, Z. Xie, A. Barton, X. Wu</p>
+          <p class="publication__venue--full">76th International Astronautical Congress (IAC), 2025</p>
+          <div class="publication__meta">
+            <span class="publication__project"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3h18v18H3zM12 8v8m-4-4h8"/></svg> Project: <a href="projects/isam.html">ISAM</a></span>
+          </div>
+        </article>
+        
+        <article class="publication--full" data-type="journal" id="pub-2025-multivariate-active-learning">
+          <div class="publication__header">
+            <span class="publication__type publication__type--journal">Journal</span>
+          </div>
+          <h3 class="publication__title--full"><a href="https://doi.org/10.1109/LRA.2025.3570127" target="_blank" rel="noopener">Multivariate Active Learning and Adaptive Sampling With Multi-Kernel Gaussian Processes</a></h3>
+          <p class="publication__authors--full">T. H. Nguyen, <strong>N. Wallace</strong>, N. Harrison, S. Sukkarieh</p>
+          <p class="publication__venue--full">IEEE Robotics and Automation Letters (RA-L), 2025</p>
+          <div class="publication__meta">
+            <span class="publication__project"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3h18v18H3zM12 8v8m-4-4h8"/></svg> Project: <a href="projects/multivariate-learning.html">Multivariate Active Learning</a></span>
+            <span class="publication__note">Impact Factor: 6.27</span>
+          </div>
+        </article>
+        
+        <article class="publication--full" data-type="journal" id="pub-2025-eco-cyber-physical-systems">
+          <div class="publication__header">
+            <span class="publication__type publication__type--journal">Journal</span>
+          </div>
+          <h3 class="publication__title--full"><a href="https://doi.org/10.1002/rob.22562" target="_blank" rel="noopener">A Framework to Enable Eco-Cyber-Physical Systems for Robotics-Focused Digital Twins in Smart Farming</a></h3>
+          <p class="publication__authors--full">F. Sibona, N. Harrison, <strong>N. Wallace</strong>, C. Stevens, S. Sukkarieh, D. Raubenheimer, S. J. Simpson, L. A. González</p>
+          <p class="publication__venue--full">Journal of Field Robotics (JFR), 2025</p>
+          <div class="publication__meta">
+            <span class="publication__project"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3h18v18H3zM12 8v8m-4-4h8"/></svg> Project: <a href="projects/smart-foraging.html">Smart Foraging</a></span>
+            <span class="publication__note">Impact Factor: 5.2</span>
+          </div>
+        </article>
+
+        <article class="publication--full" data-type="journal" id="pub-2025-blasthole-inspection">
+          <div class="publication__header">
+            <span class="publication__type publication__type--journal">Journal</span>
+          </div>
+          <h3 class="publication__title--full"><a href="https://doi.org/10.3390/robotics14120173" target="_blank" rel="noopener">Blast Hole Seeking and Dipping: Navigation and Perception Framework in a Mine Site Inspection Robot</a></h3>
+          <p class="publication__authors--full">L. Liu, E. Mihankhah, <strong>N. D. Wallace</strong>, J. Martinez, A. J. Hill</p>
+          <p class="publication__venue--full">Robotics, 2025</p>
+          <div class="publication__meta">
+            <span class="publication__project"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3h18v18H3zM12 8v8m-4-4h8"/></svg> Project: <a href="projects/blast-hole-inspection.html">Blast-hole Inspection</a></span>
+            <span class="publication__note">Impact Factor: 3.3</span>
+          </div>
+        </article>
+      </div>
+      
+      <!-- 2024 -->
+      <div class="year-group" data-year="2024">
+        <h2 class="year-heading">2024</h2>
+        
+        <article class="publication--full" data-type="conference" id="pub-2024-payload-autonomy-satellites">
+          <div class="publication__header">
+            <span class="publication__type publication__type--conference">Conference</span>
+          </div>
+          <h3 class="publication__title--full"><a href="https://www.isairas2024.org/proceedings" target="_blank" rel="noopener">Goal-oriented Payload Autonomy of Satellite Systems</a></h3>
+          <p class="publication__authors--full"><strong>N. D. Wallace</strong>, S. Sukkarieh</p>
+          <p class="publication__venue--full">International Symposium on Artificial Intelligence, Robotics and Automation in Space (i-SAIRAS), 2024</p>
+          <div class="publication__meta">
+            <span class="publication__project"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3h18v18H3zM12 8v8m-4-4h8"/></svg> Project: <a href="projects/scarlet-beta.html">Scarlet-β</a></span>
+          </div>
+        </article>
+        
+        <article class="publication--full" data-type="conference" id="pub-2024-adaptive-objectives-sensing">
+          <div class="publication__header">
+            <span class="publication__type publication__type--conference">Conference</span>
+          </div>
+          <h3 class="publication__title--full"><a href="https://www.isairas2024.org/proceedings" target="_blank" rel="noopener">Adaptive Objectives and Multimodal Sensing for Enhanced Autonomous Environmental Monitoring</a></h3>
+          <p class="publication__authors--full">D. Guirguis, <strong>N. D. Wallace</strong>, S. Sukkarieh</p>
+          <p class="publication__venue--full">International Symposium on Artificial Intelligence, Robotics and Automation in Space (i-SAIRAS), 2024</p>
+        </article>
+        
+        <article class="publication--full" data-type="conference" id="pub-2024-isam-robotic-satellite">
+          <div class="publication__header">
+            <span class="publication__type publication__type--conference">Conference</span>
+          </div>
+          <h3 class="publication__title--full"><a href="https://www.isairas2024.org/proceedings" target="_blank" rel="noopener">Robotic Satellite for In-Orbit Servicing, Assembly, and Manufacturing (ISAM): Design, Development, and Initial Results</a></h3>
+          <p class="publication__authors--full">J. Guinane, S. Alshammari, T. Bailey, X. Chen, D. G. Dansereau, V. Ila, J. Mehami, S. Sukkarieh, W. Thorp, <strong>N. Wallace</strong>, S. Williams, J. Wu, Z. Xie, J. Zhou, A. Barton, X. Wu</p>
+          <p class="publication__venue--full">International Symposium on Artificial Intelligence, Robotics and Automation in Space (i-SAIRAS), 2024</p>
+          <div class="publication__meta">
+            <span class="publication__project"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3h18v18H3zM12 8v8m-4-4h8"/></svg> Project: <a href="projects/isam.html">ISAM</a></span>
+          </div>
+        </article>
+        
+        <article class="publication--full" data-type="conference" id="pub-2024-automated-environmental-testing">
+          <div class="publication__header">
+            <span class="publication__type publication__type--conference">Conference</span>
+          </div>
+          <h3 class="publication__title--full"><a href="https://doi.org/10.1109/ICRA57147.2024.10611126" target="_blank" rel="noopener">Automated Testing of Spatially-Dependent Environmental Hypotheses through Active Transfer Learning</a></h3>
+          <p class="publication__authors--full">N. Harrison, <strong>N. Wallace</strong>, S. Sukkarieh</p>
+          <p class="publication__venue--full">IEEE International Conference on Robotics and Automation (ICRA), 2024</p>
+          <div class="publication__meta">
+            <span class="publication__project"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3h18v18H3zM12 8v8m-4-4h8"/></svg> Project: <a href="projects/multivariate-learning.html">Multivariate Active Learning</a>, <a href="projects/smart-foraging.html">Smart Foraging</a></span>
+          </div>
+        </article>
+        
+        <article class="publication--full" data-type="conference" id="pub-2024-robotic-sampling-pasture">
+          <div class="publication__header">
+            <span class="publication__type publication__type--conference">Conference</span>
+          </div>
+          <h3 class="publication__title--full"><a href="https://ssl.linklings.net/conferences/acra/acra2024_proceedings/views/includes/files/pap144s2.pdf" target="_blank" rel="noopener">Ground Robotic Sampling System for Intelligent Pasture Mapping</a></h3>
+          <p class="publication__authors--full">N. Harrison, <strong>N. Wallace</strong>, F. Sibona, I. Ingram, C. Stevens, S. Sukkarieh</p>
+          <p class="publication__venue--full">Australasian Conference on Robotics and Automation (ACRA), 2024</p>
+          <div class="publication__meta">
+            <span class="publication__project"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3h18v18H3zM12 8v8m-4-4h8"/></svg> Project: <a href="projects/smart-foraging.html">Smart Foraging</a></span>
+          </div>
+        </article>
+      </div>
+      
+      <!-- 2022 -->
+      <div class="year-group" data-year="2022">
+        <h2 class="year-heading">2022</h2>
+        
+        <article class="publication--full" data-type="journal" id="pub-2022-resource-aware-path-planning">
+          <div class="publication__header">
+            <span class="publication__type publication__type--journal">Journal</span>
+          </div>
+          <h3 class="publication__title--full"><a href="https://doi.org/10.55417/fr.2022001" target="_blank" rel="noopener">Resource and Response Aware Path Planning for Long-term Autonomy of Ground Robots in Agriculture</a></h3>
+          <p class="publication__authors--full">S. Eiffert*, <strong>N. D. Wallace*</strong>, H. Kong, N. Pirmarzdashti, S. Sukkarieh</p>
+          <p class="publication__venue--full">IEEE Transactions on Field Robotics, vol. 2, pp. 1-33, 2022</p>
+          <div class="publication__meta">
+            <span class="publication__project"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3h18v18H3zM12 8v8m-4-4h8"/></svg> Project: <a href="projects/agriculture-autonomy.html">Agricultural Autonomy</a></span>
+          </div>
+        </article>
+      </div>
+      
+      <!-- 2021 -->
+      <div class="year-group" data-year="2021" id="pub-2021-hierarchical-operating-framework">
+        <h2 class="year-heading">2021</h2>
+        
+        <article class="publication--full" data-type="conference">
+          <div class="publication__header">
+            <span class="publication__type publication__type--conference">Conference</span>
+          </div>
+          <h3 class="publication__title--full"><a href="https://doi.org/10.1007/978-3-030-71151-1_14" target="_blank" rel="noopener">Experimental Evaluation of a Hierarchical Operating Framework for Ground Robots in Agriculture</a></h3>
+          <p class="publication__authors--full">S. Eiffert*, <strong>N. D. Wallace*</strong>, H. Kong, N. Pirmarzdashti, S. Sukkarieh</p>
+          <p class="publication__venue--full">Experimental Robotics: The 17th International Symposium, vol. 19, pp. 151-160, Springer Nature, 2021</p>
+          <div class="publication__meta">
+            <span class="publication__project"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3h18v18H3zM12 8v8m-4-4h8"/></svg> Project: <a href="projects/agriculture-autonomy.html">Agricultural Autonomy</a></span>
+          </div>
+        </article>
+      </div>
+      
+      <!-- 2020 -->
+      <div class="year-group" data-year="2020">
+        <h2 class="year-heading">2020</h2>
+        
+        <article class="publication--full" data-type="conference" id="pub-2020-orienteering-replenishment">
+          <div class="publication__header">
+            <span class="publication__type publication__type--conference">Conference</span>
+          </div>
+          <h3 class="publication__title--full"><a href="https://doi.org/10.1109/CASE48305.2020.9216857" target="_blank" rel="noopener">The Orienteering Problem with Replenishment</a></h3>
+          <p class="publication__authors--full"><strong>N. D. Wallace</strong>, H. Kong, A. J. Hill, S. Sukkarieh</p>
+          <p class="publication__venue--full">IEEE 16th International Conference on Automation Science and Engineering (CASE), pp. 948-954, 2020</p>
+          <div class="publication__meta">
+            <span class="publication__project"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3h18v18H3zM12 8v8m-4-4h8"/></svg> Project: <a href="projects/phd-thesis.html">PhD Thesis</a></span>
+          </div>
+        </article>
+        
+        <article class="publication--full" data-type="conference" id="pub-2020-hierarchical-farming-deployment">
+          <div class="publication__header">
+            <span class="publication__type publication__type--conference">Conference</span>
+          </div>
+          <h3 class="publication__title--full"><a href="https://doi.org/10.1109/CASE48305.2020.9216764" target="_blank" rel="noopener">A Hierarchical Framework for Long-term and Robust Deployment of Field Ground Robots in Large-Scale Farming</a></h3>
+          <p class="publication__authors--full">S. Eiffert, <strong>N. D. Wallace</strong>, H. Kong, N. Pirmarzdashti, S. Sukkarieh</p>
+          <p class="publication__venue--full">IEEE 16th International Conference on Automation Science and Engineering (CASE), pp. 948-954, 2020</p>
+          <div class="publication__meta">
+            <span class="publication__project"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3h18v18H3zM12 8v8m-4-4h8"/></svg> Project: <a href="projects/agriculture-autonomy.html">Agricultural Autonomy</a></span>
+          </div>
+        </article>
+      </div>
+      
+      <!-- 2019 -->
+      <div class="year-group" data-year="2019">
+        <h2 class="year-heading">2019</h2>
+        
+        <article class="publication--full" data-type="conference" id="pub-2019-receding-horizon-control">
+          <div class="publication__header">
+            <span class="publication__type publication__type--conference">Conference</span>
+          </div>
+          <h3 class="publication__title--full"><a href="https://doi.org/10.1109/ICRA.2019.8793941" target="_blank" rel="noopener">Receding Horizon Estimation and Control with Structured Noise Blocking for Mobile Robot Slip Compensation</a></h3>
+          <p class="publication__authors--full"><strong>N. D. Wallace</strong>, H. Kong, A. J. Hill, S. Sukkarieh</p>
+          <p class="publication__venue--full">IEEE International Conference on Robotics and Automation (ICRA), pp. 1169-1175, 2019</p>
+          <div class="publication__meta">
+            <span class="publication__project"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3h18v18H3zM12 8v8m-4-4h8"/></svg> Project: <a href="projects/phd-thesis.html">PhD Thesis</a></span>
+          </div>
+        </article>
+        
+        <article class="publication--full" data-type="conference" id="pub-2019-slip-compensation-validation">
+          <div class="publication__header">
+            <span class="publication__type publication__type--conference">Conference</span>
+          </div>
+          <h3 class="publication__title--full"><a href="https://doi.org/10.1007/978-981-15-9460-1_29" target="_blank" rel="noopener">Experimental Validation of Structured Receding Horizon Estimation and Control for Mobile Ground Robot Slip Compensation</a></h3>
+          <p class="publication__authors--full"><strong>N. D. Wallace</strong>, H. Kong, A. J. Hill, S. Sukkarieh</p>
+          <p class="publication__venue--full">12th Conference on Field and Service Robotics (FSR), Tokyo, Japan, pp. 1-16, 2019</p>
+          <div class="publication__meta">
+            <span class="publication__project"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3h18v18H3zM12 8v8m-4-4h8"/></svg> Project: <a href="projects/phd-thesis.html">PhD Thesis</a></span>
+          </div>
+        </article>
+        
+        <article class="publication--full" data-type="conference" id="pub-2019-motion-cost-terrains">
+          <div class="publication__header">
+            <span class="publication__type publication__type--conference">Conference</span>
+          </div>
+          <h3 class="publication__title--full"><a href="https://doi.org/10.1016/j.ifacol.2019.11.043" target="_blank" rel="noopener">Motion Cost Characterisation of an Omnidirectional WMR on Uneven Terrains</a></h3>
+          <p class="publication__authors--full"><strong>N. D. Wallace</strong>, H. Kong, A. J. Hill, S. Sukkarieh</p>
+          <p class="publication__venue--full">Joint 12th IFAC Conference on Control Applications in Marine Systems, Robotics, and Vehicles, Daejeon, Korea, 2019</p>
+          <div class="publication__meta">
+            <span class="publication__project"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3h18v18H3zM12 8v8m-4-4h8"/></svg> Project: <a href="projects/phd-thesis.html">PhD Thesis</a></span>
+          </div>
+        </article>
+        
+        <article class="publication--full" data-type="conference" id="pub-2019-energy-aware-mission">
+          <div class="publication__header">
+            <span class="publication__type publication__type--conference">Conference</span>
+          </div>
+          <h3 class="publication__title--full"><a href="https://doi.org/10.1016/j.ifacol.2019.12.513" target="_blank" rel="noopener">Energy Aware Mission Planning for WMRs on Uneven Terrains</a></h3>
+          <p class="publication__authors--full"><strong>N. D. Wallace</strong>, H. Kong, A. J. Hill, S. Sukkarieh</p>
+          <p class="publication__venue--full">6th IFAC Conference on Sensing, Control and Automation Technologies for Agriculture, Sydney, Australia, 2019</p>
+          <div class="publication__meta">
+            <span class="publication__project"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3h18v18H3zM12 8v8m-4-4h8"/></svg> Project: <a href="projects/phd-thesis.html">PhD Thesis</a></span>
+          </div>
+        </article>
+      </div>
+      
+      <!-- 2018 -->
+      <div class="year-group" data-year="2018">
+        <h2 class="year-heading">2018</h2>
+        
+        <article class="publication--full" data-type="conference" id="pub-2018-structured-noise-blocking">
+          <div class="publication__header">
+            <span class="publication__type publication__type--conference">Conference</span>
+          </div>
+          <h3 class="publication__title--full"><a href="https://www.researchgate.net/publication/335395893_Structured_noise_blocking_strategies_for_receding_horizon_estimation_and_control_of_mobile_robots_with_slip" target="_blank" rel="noopener">Structured Noise Blocking Strategies for Receding Horizon Estimation and Control of Mobile Robots with Slip</a></h3>
+          <p class="publication__authors--full"><strong>N. D. Wallace</strong>, H. Kong, A. J. Hill, S. Sukkarieh</p>
+          <p class="publication__venue--full">Australasian Conference on Robotics and Automation (ACRA), pp. 1-10, 2018</p>
+          <div class="publication__meta">
+            <span class="publication__project"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3h18v18H3zM12 8v8m-4-4h8"/></svg> Project: <a href="projects/phd-thesis.html">PhD Thesis</a></span>
+          </div>
+        </article>
+        
+        <article class="publication--full" data-type="journal" id="pub-2018-crystallographic-information-apt">
+          <div class="publication__header">
+            <span class="publication__type publication__type--journal">Journal</span>
+          </div>
+          <h3 class="publication__title--full"><a href="https://doi.org/10.1016/j.ultramic.2018.02.006" target="_blank" rel="noopener">On the Retrieval of Crystallographic Information from Atom Probe Microscopy Data via Signal Mapping from the Detector Coordinate Space</a></h3>
+          <p class="publication__authors--full"><strong>N. Wallace</strong>, A. Ceguerra, A. Breen, S. Ringer</p>
+          <p class="publication__venue--full">Ultramicroscopy, vol. 189, pp. 65-75, 2018</p>
+        </article>
+      </div>
+      
+    </div>
+  </section>
+
+  <footer class="footer"><div class="container"><p>© 2026 Nathan Wallace.</p></div></footer>
+  <script src="js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const filterButtons = document.querySelectorAll('.publications__filters .filter-btn');
+      const publications = document.querySelectorAll('.publication--full');
+      const yearGroups = document.querySelectorAll('.year-group');
+      const noResults = document.querySelector('.no-results');
+      
+      filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+          const filter = button.dataset.filter;
+          
+          // Update active button
+          filterButtons.forEach(btn => btn.classList.remove('filter-btn--active'));
+          button.classList.add('filter-btn--active');
+          
+          let visibleCount = 0;
+          
+          // Filter publications
+          publications.forEach(pub => {
+            const type = pub.dataset.type;
+            if (filter === 'all' || type === filter) {
+              pub.classList.remove('hidden');
+              visibleCount++;
+            } else {
+              pub.classList.add('hidden');
+            }
+          });
+          
+          // Hide empty year groups
+          yearGroups.forEach(group => {
+            const visiblePubs = group.querySelectorAll('.publication--full:not(.hidden)');
+            if (visiblePubs.length === 0) {
+              group.classList.add('hidden');
+            } else {
+              group.classList.remove('hidden');
+            }
+          });
+          
+          // Show/hide no results message
+          if (visibleCount === 0) {
+            noResults.classList.add('visible');
+          } else {
+            noResults.classList.remove('visible');
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>

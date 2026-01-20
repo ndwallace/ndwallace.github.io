@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Autonomous Network-Centric Firefighting - Integrating robots, drones, and wearables for bushfire response.">
+  <title>Autonomous Network-Centric Firefighting | Nathan Wallace</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
+  <!-- Below PHP versioning to workaround aggressive browser caching -->
+  <link rel="stylesheet" href="../css/style.css?<?php echo filemtime('../css/style.css') ?>"/>
+  <link rel="stylesheet" href="../css/project.css?<?php echo filemtime('../css/project.css') ?>"/>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤖</text></svg>">
+</head>
+<body>
+  <nav class="nav">
+    <div class="container nav__inner">
+      <a href="../index.html" class="nav__logo">Dr. Nathan Wallace</a>
+      <button class="nav__toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+      <ul class="nav__links">
+        <li><a href="../index.html#about" class="nav__link">About</a></li>
+        <li><a href="../index.html#education" class="nav__link">Education</a></li>
+        <li><a href="../index.html#skills" class="nav__link">Skills</a></li>
+        <li><a href="../projects.html" class="nav__link">Projects</a></li>
+        <li><a href="../publications.html" class="nav__link">Publications</a></li>
+        <li><a href="../index.html#contact" class="nav__link">Contact</a></li>
+        <li><a href="https://media.githubusercontent.com/media/ndwallace/CV/refs/heads/main/CV_NathanWallace.pdf" class="btn btn--small btn--primary">Resume</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <article class="project-detail">
+    <header class="project-hero">
+      <div class="container">
+        <a href="../projects.html" class="back-link">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+          All Projects
+        </a>
+        <div class="project-hero__inner">
+          <div class="project-hero__content">
+            <span class="project-hero__domain project-hero__domain--emergency">Emergency Response</span>
+            <h1>Autonomous Network-Centric Firefighting</h1>
+            <p class="project-hero__summary">Developing integrated autonomous systems—ground robots, drones, vehicle telemetry, and wearables—to enhance situational awareness and safety for bushfire response teams.</p>
+            <div class="project-hero__meta">
+              <div class="meta-item"><span class="meta-item__label">Role</span><span class="meta-item__value">Robotics Lead</span></div>
+              <div class="meta-item"><span class="meta-item__label">Timeline</span><span class="meta-item__value">2024 – 2025</span></div>
+              <div class="meta-item"><span class="meta-item__label">Partners</span><span class="meta-item__value">NSW RFS</span></div>
+              <div class="meta-item"><span class="meta-item__label">Team</span><span class="meta-item__value">10+ Engineers</span></div>
+            </div>
+          </div>
+          <div class="project-hero__image">
+            <div class="project-hero__image-wrapper">
+              <img src="../images/fieldwork_rfs_hrb.jpg" alt="RFS" style="margin-top: 0px;">
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    
+    <div class="project-content">
+      <div class="container">
+        <div class="project-content__inner">
+          <div class="project-body">
+            <h2>The Challenge</h2>
+            <p>Bushfires pose an immense threat to Australian communities, and firefighters often operate with limited information about the conditions ahead. With over 75,000km of fire trails across NSW alone, there simply isn't enough manpower to spare for monitoring their condition, endangering firefighters and depriving fire prediction models of up-to-date data. Couple this with the fact environmental conditions can shift rapidly in live-fire scenarios, and it can become incredibly difficult to plan safe and effective responses.</p>
+            <p>Thus, the challenge was two-fold; to develop systems that could provide comprehensive, real-time, actionable intelligence to firefighting crews in a live fire situation, and autonomously navigate, monitor and record the condition of fire trails to assist fire prediction modelling.</p>
+            <p>These goals inspired the concept of network-centric firefighting autonomy; blending the complimentary capabilities of mobile ground robots, drones, wearable devices and vehicle telemetry to augment the RFS's ability to combat the bushfire threat.</p>
+
+            <figure class="project-image">
+              <img src="../images/rfs_mosaic.jpg" alt="Images showcasing the major themes of the project." style="margin-top: 0px;">
+              <figcaption>The major themes in the project. (a) Tethered drone, (b) Mobile Ground Robots, (c) Helicopter repeater payload, (d) Vehicle Telemetry, (e) Wearable devices.</figcaption>
+            </figure>
+
+            <h2>My Contribution</h2>
+            <p>As lead researcher on this project, I was responsible for developing the mobile robot capabilities for fire trail monitoring and inspection. This included:</p>
+            <ul>
+              <li><strong>Fuel load estimation</strong> — Using onboard sensors to assess the density and dryness of vegetation along fire trails</li>
+              <li><strong>Trail condition assessment</strong> — Autonomous traversability analysis to identify routes safe for emergency vehicles</li>
+              <li><strong>System integration</strong> — Bringing together the robot platform, sensor suite, and communication systems into a cohesive field-deployable package</li>
+            </ul>
+            <p>I worked closely with a team of 10+ software and hardware engineers, conducting quarterly workshops with NSW Rural Fire Service stakeholders to ensure our development aligned with real operational needs.</p>
+
+            <figure class="project-image">
+              <img src="../images/fieldwork_rfsuloola_team.jpg" alt="ACFR team with RFS after full system demonstration trial." style="margin-top: 0px;">
+              <figcaption>The ACFR team pictured with Swagbot and tethered drone system installed on a CAT-1 fire truck taken after successful full-system live demonstration.</figcaption>
+            </figure>
+
+            <h2>Field Trials & Demonstrations</h2>
+            <p>We conducted over 15 field trials across various locations, progressively validating and refining the system in increasingly realistic conditions. These trials covered everything from basic navigation to full autonomous data collection runs along active fire trails.</p>
+            <p>A highlight was exhibiting our system at the RFS State Championships, where we showcased the networked robot capabilities to government and industry stakeholders, exploring potential avenues for further collaboration.</p>
+
+            <h2>Technical Approach</h2>
+            <p>The system leverages our existing Swagbot platform with a custom sensor suite optimised for fire trail environments. Key technical elements include:</p>
+            <ul>
+              <li>Multi-modal sensing for fuel load estimation (LiDAR, thermal, visual)</li>
+              <li>Real-time traversability mapping for safe path planning</li>
+              <li>Network integration with aerial drones and wearable devices</li>
+              <li>Robust communication systems for operation in areas with limited connectivity</li>
+            </ul>
+
+            <figure class="project-image">
+              <img src="../images/fuel_hazard_pipeline.png" alt="Fuel hazard estimation pipeline." style="margin-top: 0px;">
+              <figcaption>Proof-of-concept processing pipeline for fuel hazard estimation.</figcaption>
+            </figure>
+
+            <h2>Impact & Outcomes</h2>
+            <p>This project demonstrated that autonomous ground robots can play a valuable role in enhancing firefighter safety and operational effectiveness. The system provides a "forward scout" capability—gathering critical intelligence without exposing personnel to danger.</p>
+            <p>The positive reception from RFS stakeholders and the general public at our demonstrations has opened discussions about potential deployment pathways and further research partnerships.</p>
+
+            <nav class="project-nav">
+              <a href="isam.html">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+                Previous: ISAM
+              </a>
+              <a href="agriculture-autonomy.html" class="project-nav__next">
+                Next: Agricultural Autonomy
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </a>
+            </nav>
+          </div>
+          
+          <aside class="project-sidebar">
+            <div class="sidebar-section">
+              <h3>Technologies</h3>
+              <div class="sidebar-tags">
+                <span class="tag">ROS</span>
+                <span class="tag">Python</span>
+                <span class="tag">LiDAR</span>
+                <span class="tag">Thermal Imaging</span>
+                <span class="tag">Path Planning</span>
+                <span class="tag">Sensor Fusion</span>
+                <span class="tag">Multi-Robot</span>
+              </div>
+            </div>
+            
+            <div class="sidebar-section">
+              <h3>Key Outcomes</h3>
+              <ul class="sidebar-list">
+                <li>15+ field trials completed</li>
+                <li>Exhibited at RFS State Championships</li>
+                <li>Autonomous fuel load estimation</li>
+                <li>Trail traversability assessment</li>
+                <li>Multi-stakeholder engagement</li>
+              </ul>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <footer class="footer"><div class="container"><p>© 2026 Nathan Wallace.</p></div></footer>
+  <script src="../js/main.js"></script>
+</body>
+</html>

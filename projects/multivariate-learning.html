@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Multivariate Active Learning - Algorithms and robotic systems for intelligent environmental monitoring, leveraging correlations between variables to maximise information gain.">
+  <title>Multivariate Active Learning | Nathan Wallace</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
+  <!-- Below PHP versioning to workaround aggressive browser caching -->
+  <link rel="stylesheet" href="../css/style.css?<?php echo filemtime('../css/style.css') ?>"/>
+  <link rel="stylesheet" href="../css/project.css?<?php echo filemtime('../css/project.css') ?>"/>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤖</text></svg>">
+</head>
+<body>
+  <nav class="nav">
+    <div class="container nav__inner">
+      <a href="../index.html" class="nav__logo">Dr. Nathan Wallace</a>
+      <button class="nav__toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+      <ul class="nav__links">
+        <li><a href="../index.html#about" class="nav__link">About</a></li>
+        <li><a href="../index.html#education" class="nav__link">Education</a></li>
+        <li><a href="../index.html#skills" class="nav__link">Skills</a></li>
+        <li><a href="../projects.html" class="nav__link">Projects</a></li>
+        <li><a href="../publications.html" class="nav__link">Publications</a></li>
+        <li><a href="../index.html#contact" class="nav__link">Contact</a></li>
+        <li><a href="https://media.githubusercontent.com/media/ndwallace/CV/refs/heads/main/CV_NathanWallace.pdf" class="btn btn--small btn--primary">Resume</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <article class="project-detail">
+    <header class="project-hero">
+      <div class="container">
+        <a href="../projects.html" class="back-link">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+          All Projects
+        </a>
+        <div class="project-hero__inner">
+          <div class="project-hero__content">
+            <span class="project-hero__domain project-hero__domain--agriculture">Agriculture</span>
+            <h1>Multivariate Active Learning</h1>
+            <p class="project-hero__summary">Developing algorithms and robotic systems for intelligent environmental monitoring—learning correlations between multiple quantities of interest to maximise information gain with constrained sampling budgets, and deploying these methods on autonomous ground platforms for agricultural applications.</p>
+            <div class="project-hero__meta">
+              <div class="meta-item"><span class="meta-item__label">Role</span><span class="meta-item__value">Co-supervisor & Integration Lead</span></div>
+              <div class="meta-item"><span class="meta-item__label">Timeline</span><span class="meta-item__value">2023 – 2025</span></div>
+              <div class="meta-item"><span class="meta-item__label">Partners</span><span class="meta-item__value">Vonwiller Foundation</span></div>
+              <div class="meta-item"><span class="meta-item__label">Team</span><span class="meta-item__value">5+ Engineers</span></div>
+            </div>
+          </div>
+          <div class="project-hero__image">
+            <div class="project-hero__image-wrapper">
+              <img src="../images/fieldwork_selfie.jpg" alt="Adaptive Sampling" style="margin-top: 0px;">
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    
+    <div class="project-content">
+      <div class="container">
+        <div class="project-content__inner">
+          <div class="project-body">
+            <h2>The Challenge</h2>
+            <p>Environmental monitoring often requires measuring multiple quantities simultaneously—soil nitrogen, phosphorus, moisture, pH levels, or pasture height, for example. Traditional approaches treat each quantity independently, but in reality these variables are often correlated. Measuring one can provide information about others, and prior data sources (such as satellite imagery or elevation maps) may contain useful signals if their relationships to the quantities of interest can be learned.</p>
+            <p>The challenge was threefold: develop algorithms that can exploit inter-variable correlations to select sampling locations that maximise total information gain; test hypotheses about these correlations in real-time from sparse, non-collocated data; and deploy these methods on autonomous robotic platforms operating under practical constraints like time, energy, and robot capabilities.</p>
+
+            <figure class="project-image">
+              <img src="../images/mtgp_aus.jpg" alt="MQGP learning and estimating the correlations between multiple quantities on nation-scale environment data." style="margin-top: 0px;">
+              <figcaption>MQGP learning and estimating the correlations between multiple quantities on nation-scale environment data.</figcaption>
+            </figure>
+
+            <h2>Technical Approach</h2>
+            <p>This project developed a series of methods for multivariate active learning and adaptive sampling, culminating in deployment on an autonomous ground robot.</p>
+            
+            <p><strong>Multi-Task Gaussian Processes (MTGP)</strong> — The foundational work introduced a GP-based framework that models correlations between a quantity of interest and prior data sources. By replacing the standard signal variance with a learned covariance matrix between quantities, the method can calculate hypothesis quality scores (coefficients of determination) from sparse, non-collocated samples. Good hypotheses improve prediction accuracy by factors of 1.4-3.4 within the first 7 samples; poor hypotheses are quickly identified and disregarded with no adverse effect.</p>
+            
+            <p><strong>Multi-Kernel GP (MKGP)</strong> — Building on the MTGP work, this extension allows different kernel types and hyperparameters to be assigned to each quantity, rather than assuming a single shared kernel. This better captures the distinct spatial characteristics of different environmental variables. The method uses restricted maximum likelihood estimation (RMLE) with free-form parameterisation of the cross-covariance matrix to jointly learn spatial models and inter-variable correlations.</p>
+            
+            <p><strong>Multivariate Adaptive Sampling (MVAS)</strong> — A sample selection method that considers information gain across all quantities of interest, explicitly leverages prior data based on learned correlations, and incorporates travel cost into the objective function. In experiments on the Jura heavy-metals dataset, MVAS achieved target accuracy with 158 samples compared to 200+ for coverage or random sampling, while reducing travel costs by 41% when the cost term was included.</p>
+            
+            <p><strong>Robotic System Integration</strong> — The algorithms were deployed on the Swagbot platform, a 4-wheel independent drive-and-steer robot equipped with LIDAR, RGB-D camera, GNSS, and IMU. The system performs real-time belief map generation, informative sample selection, and autonomous navigation, with computation times of approximately 0.3-0.4 seconds per sample—negligible compared to travel times of 20-60 seconds.</p>
+
+            <h2>My Contribution</h2>
+            <p>My specific contributions included:</p>
+            <ul>
+              <li>Leading robotic system integration, including the guidance, navigation, and control stack on the Swagbot platform</li>
+              <li>Connecting the algorithmic work to practical agricultural monitoring applications</li>
+              <li>Supporting field validation experiments on University of Sydney farm properties</li>
+              <li>Providing guidance on the research direction and key problems faced by active sampling methods</li>
+              <li>Providing guidance on Gaussian Process methodology and adaptive sampling strategies</li>
+            </ul>
+
+            <h2>Applications</h2>
+            <p>The methods were validated across multiple application domains:</p>
+            
+            <p><strong>Soil Nutrient Monitoring</strong> — Mapping the spatial distribution of heavy metals (cadmium, lead, copper) in the Jura dataset, demonstrating that MKGP achieves mean prediction errors of 13–15% compared to 14–17% for single-output methods, with substantially lower maximum errors and variance.</p>
+            
+            <p><strong>Pasture Height Mapping</strong> — Field deployment on a grazing livestock property, where the robot autonomously collected 30 samples within a 50×50m area using RGB-D camera measurements. The system successfully mapped pasture heights and evaluated hypotheses about correlations with terrain elevation (finding a weak negative correlation of −0.3).</p>
+            
+            <p><strong>Continental-Scale Environmental Data</strong> — Testing on NASA Earth Observations data across Australia, where the method identified strong correlations between vegetation, rainfall, elevation, and ground temperature, improving prediction accuracy by up to 75% in early samples.</p>
+
+            <figure class="project-image">
+              <img src="../images/mvas_system.jpg" alt="Overview of MKGP/MVAS system, with results on synthetic Nitrogen-Phosphorous data with and without considering travel cost Λ." style="margin-top: 0px;">
+              <figcaption>Overview of MKGP/MVAS system, with results on synthetic Nitrogen-Phosphorous data with and without considering travel cost Λ.</figcaption>
+            </figure>
+
+            <h2>Results & Impact</h2>
+            <p>This research produced three publications: an IEEE ICRA paper (2024) establishing the hypothesis-testing framework, an ACRA paper (2024) demonstrating field deployment on a robotic platform, and an IEEE Robotics and Automation Letters paper (2025, IF 5.3) presenting the full MKGP/MVAS system.</p>
+            <p>Key quantitative results include:</p>
+            <ul>
+              <li>MVAS requires 21% fewer samples than coverage or random sampling to achieve equivalent accuracy</li>
+              <li>Travel costs reduced by 41% when explicitly optimised</li>
+              <li>Correlation estimates converge correctly within 5-7 samples for both linear and nonlinear relationships</li>
+              <li>Real-time computation suitable for in-situ decision making (~0.4s per sample)</li>
+            </ul>
+            <p>The algorithms are actively being used in current agricultural industry projects and have broader applications in mining exploration, environmental monitoring, and any domain requiring efficient multi-quantity spatial mapping.</p>
+
+            <nav class="project-nav">
+              <a href="smart-foraging.html">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+                Previous: Smart Foraging
+              </a>
+              <a href="energy-aware-planning.html" class="project-nav__next">
+                Next: Energy-aware planning
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </a>
+            </nav>
+          </div>
+          
+          <aside class="project-sidebar">
+            <div class="sidebar-section">
+              <h3>Technologies</h3>
+              <div class="sidebar-tags">
+                <span class="tag">Python</span>
+                <span class="tag">Gaussian Processes</span>
+                <span class="tag">Multi-output GPs</span>
+                <span class="tag">Active Learning</span>
+                <span class="tag">Bayesian Optimisation</span>
+                <span class="tag">ROS</span>
+                <span class="tag">RGB-D Sensing</span>
+              </div>
+            </div>
+            
+            <div class="sidebar-section">
+              <h3>Key Outcomes</h3>
+              <ul class="sidebar-list">
+                <li>IEEE RA-L publication (IF 5.3)</li>
+                <li>ICRA 2024 publication</li>
+                <li>Field-validated robotic system</li>
+                <li>Active industry deployment</li>
+                <li>21% sampling efficiency gain</li>
+                <li>41% travel cost reduction</li>
+              </ul>
+            </div>
+            
+            <div class="sidebar-section">
+              <h3>Related Publications</h3>
+              <div class="sidebar-publications">
+                <div class="sidebar-pub">
+                  <span class="sidebar-pub__title"><a href="../publications.html#pub-2025-multivariate-active-learning">Multivariate Active Learning and Adaptive Sampling With Multi-Kernel Gaussian Processes</a></span>
+                  <span class="sidebar-pub__venue">IEEE RA-L, 2025</span>
+                </div>
+                <div class="sidebar-pub">
+                  <span class="sidebar-pub__title"><a href="../publications.html#pub-2024-robotic-sampling-pasture">Ground Robotic Sampling System for Intelligent Pasture Mapping</a></span>
+                  <span class="sidebar-pub__venue">ACRA, 2024</span>
+                </div>
+                <div class="sidebar-pub">
+                  <span class="sidebar-pub__title"><a href="../publications.html#pub-2024-automated-environmental-testing">Automated Testing of Spatially-Dependent Environmental Hypotheses through Active Transfer Learning</a></span>
+                  <span class="sidebar-pub__venue">ICRA, 2024</span>
+                </div>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <footer class="footer"><div class="container"><p>© 2026 Nathan Wallace.</p></div></footer>
+  <script src="../js/main.js"></script>
+</body>
+</html>

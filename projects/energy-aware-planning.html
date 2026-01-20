@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="PhD Research - Energy-Aware Path Planning for Efficient and Safe Navigation of Off-road Wheeled Mobile Robots over Rough Terrains.">
+  <title>Energy-Aware Path Planning | Nathan Wallace</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
+  <!-- Below PHP versioning to workaround aggressive browser caching -->
+  <link rel="stylesheet" href="../css/style.css?<?php echo filemtime('../css/style.css') ?>"/>
+  <link rel="stylesheet" href="../css/project.css?<?php echo filemtime('../css/project.css') ?>"/>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤖</text></svg>">
+</head>
+<body>
+  <nav class="nav">
+    <div class="container nav__inner">
+      <a href="../index.html" class="nav__logo">Dr. Nathan Wallace</a>
+      <button class="nav__toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+      <ul class="nav__links">
+        <li><a href="../index.html#about" class="nav__link">About</a></li>
+        <li><a href="../index.html#education" class="nav__link">Education</a></li>
+        <li><a href="../index.html#skills" class="nav__link">Skills</a></li>
+        <li><a href="../projects.html" class="nav__link">Projects</a></li>
+        <li><a href="../publications.html" class="nav__link">Publications</a></li>
+        <li><a href="../index.html#contact" class="nav__link">Contact</a></li>
+        <li><a href="https://media.githubusercontent.com/media/ndwallace/CV/refs/heads/main/CV_NathanWallace.pdf" class="btn btn--small btn--primary">Resume</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <article class="project-detail">
+    <header class="project-hero">
+      <div class="container">
+        <a href="../projects.html" class="back-link">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+          All Projects
+        </a>
+        <div class="project-hero__inner">
+          <div class="project-hero__content">
+            <span class="project-hero__domain project-hero__domain--agriculture">PhD Research</span>
+            <h1>Energy-Aware Planning</h1>
+            <p class="project-hero__summary">Efficient and safe path planning over rough terrains using terrain-dependent energy cost models and sampling-based planning techniques for long-duration autonomous missions on wheeled mobile robots.</p>
+            <div class="project-hero__meta">
+              <div class="meta-item"><span class="meta-item__label">Thesis Component</span><span class="meta-item__value">Chapters 3 & 6</span></div>
+              <div class="meta-item"><span class="meta-item__label">Timeline</span><span class="meta-item__value">2016 - 2020</span></div>
+              <div class="meta-item"><span class="meta-item__label">Institution</span><span class="meta-item__value">University of Sydney</span></div>
+              <div class="meta-item"><span class="meta-item__label">Publications</span><span class="meta-item__value">3 papers</span></div>
+            </div>
+          </div>
+          <div class="project-hero__image">
+            <div class="project-hero__image-wrapper">
+              <img src="../images/energyawarepp.jpg" alt="Energy-aware Path Planning over Rough Terrain" style="margin-top: 0px;">
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    
+    <div class="project-content">
+      <div class="container">
+        <div class="project-content__inner">
+          <div class="project-body">
+            <h2>The Energy Challenge</h2>
+            <p>Agricultural properties are vast, often encompassing large areas of undulating off-road terrain with varying traction conditions. For autonomous wheeled mobile robots operating in these environments, careful consideration and management of energy resources is essential when planning missions—traversing large distances and achieving objectives without stranding the platform in the field.</p>
+            <p>This research addresses the motion planning problem for wheeled mobile robots on undulating off-road terrains, developing a hierarchical planning strategy that leverages sampling-based techniques to generate energy-efficient mission plans.</p>
+
+            <figure class="project-image">
+              <img src="../images/energy_modelling.jpg" alt="Comparison between energy-efficient and shortest-path routes through waypoints, and learnt power consumption model of Swagbot showing dependency on terrain slope and velocity" style="margin-top: 0px;">
+              <figcaption>Comparison between energy-efficient and shortest-path routes through waypoints, and learnt power consumption model of Swagbot showing dependency on terrain slope and velocity.</figcaption>
+            </figure>
+
+            <h2>Energy Cost of Motion Model</h2>
+            <p>A foundational contribution is the development of a data-driven energy cost of motion (ECM) model for omnidirectional wheeled mobile robots. The model captures the relationship between energy consumption and key factors:</p>
+            <ul>
+              <li><strong>Terrain Slope</strong> — Power draw increases significantly when climbing grades, with the relationship being approximately linear with slope angle for moderate inclines</li>
+              <li><strong>Vehicle Speed</strong> — Higher speeds require more power, but complete the mission faster; the optimal trade-off depends on the specific terrain profile</li>
+              <li><strong>Platform Configuration</strong> — The robot's mass and drivetrain characteristics affect baseline power consumption</li>
+              <li><strong>Surface Type</strong> — Different terrain surfaces (grass, gravel, sealed) exhibit different rolling resistance characteristics</li>
+            </ul>
+            <p>The model was calibrated using extensive field trial data collected during autonomous surveys at agricultural sites, with the resulting predictions achieving accuracy within 1–5% of measured energy consumption.</p>
+
+            <h2>Hierarchical Planning Pipeline</h2>
+            <p>The energy-efficient path planning approach involves a multi-stage pipeline:</p>
+            
+            <h3>1. Environment and Task Specification</h3>
+            <p>A georeferenced digital elevation map (DEM) provides terrain topology, while permissive and restrictive regions define traversable space. Mission goals are specified as a set of locations the robot must visit.</p>
+
+            <h3>2. Roadmap Generation</h3>
+            <p>Using the Probabilistic Roadmap (PRM) method, the continuous state space is discretised through random sampling. Two sampling strategies were developed:</p>
+            <ul>
+              <li><strong>Point-based Sampling</strong> — A simplified approach using a disc collision model and holonomic motion assumptions. Fast to compute and allows dense environment coverage, but produces somewhat jagged paths.</li>
+              <li><strong>Kinematic Pose Sampling</strong> — Full pose-kinematic configuration sampling that considers platform stability and connects poses via clothoid curves. Produces smooth, Ackermann-feasible paths at higher computational cost.</li>
+            </ul>
+
+            <figure class="project-image">
+              <img src="../images/eepp_pipeline.jpg" alt="The energy efficient path planning pipeline" style="margin-top: 0px;">
+              <figcaption>Overview of the energy-efficient path planning pipeline. From left: environment specification, PRM generation, illustrative example of the kinematic relaxation process used for stability estimation, a comparison of the resulting shortest-path and energy-efficient plans.</figcaption>
+            </figure>
+
+            <h3>3. Task Graph Generation</h3>
+            <p>A compact goal connectivity graph encodes the minimum-cost paths between each pair of goal locations. Dijkstra's algorithm queries the roadmap to find these optimal inter-goal paths, with costs determined by either Euclidean distance (baseline) or the ECM model (energy-aware).</p>
+
+            <h3>4. Tour Optimisation</h3>
+            <p>The mission is modelled as an Asymmetric Travelling Salesman Problem (ATSP), accounting for the fact that traversal costs between locations are direction-dependent on undulating terrain (climbing vs descending). The ATSP solution yields the minimum-cost ordering of goal visits.</p>
+
+            <h2>Clothoid-Based Path Connection</h2>
+            <p>For kinematic sampling, poses are connected using clothoid curves—curves with linearly varying curvature. This enables:</p>
+            <ul>
+              <li>Smooth transitions between poses of different orientations</li>
+              <li>Paths feasible for Ackermann-steered vehicles</li>
+              <li>Enforcement of curvature constraints based on platform kinematic limits</li>
+            </ul>
+            <p>The Clothoid Hermite G1 interpolation problem is solved efficiently using the method of Bertolazzi and Frego, finding the shortest clothoid segment connecting two poses with specified positions and headings.</p>
+
+            <h2>Field Validation</h2>
+            <p>Ten field tests across two agricultural sites validated the planning approach. Energy-aware plans were observed to:</p>
+            <ul>
+              <li>Follow terrain level curves to minimise elevation changes</li>
+              <li>Reduce predicted mission energy cost by up to 4% compared to shortest-distance planning</li>
+              <li>Demonstrate ECM prediction accuracy within 1–5% of measured consumption</li>
+            </ul>
+            <p>The methodology proved particularly effective on terrain with steeper grades, where the energy savings from intelligent path selection become more pronounced.</p>
+
+            <h2>The Orienteering Problem with Replenishment</h2>
+            <p>Beyond standard path planning, this research also introduced a novel problem formulation: the Orienteering Problem with Replenishment (OPR). This extends classical orienteering to scenarios where robots can recharge at designated locations, enabling longer missions that would otherwise exceed battery capacity.</p>
+            <p>The OPR formulation has applications in agricultural monitoring where charging stations can be strategically placed, allowing robots to cover larger areas through multi-leg missions with intermediate recharging.</p>
+
+            <figure class="project-image">
+              <img src="../images/opr.png" alt="Diagram of the OPR scenario" style="margin-top: 0px;">
+              <figcaption>High-level illustrative diagram of the OPR, which addresses resource constraints at the task and scheduling level.</figcaption>
+            </figure>
+
+            <h2>Impact and Applications</h2>
+            <p>The energy-aware planning framework developed in this work enables autonomous robots to operate more efficiently in resource-constrained environments. Key applications include:</p>
+            <ul>
+              <li>Extended-duration agricultural surveys and monitoring</li>
+              <li>Autonomous fence and infrastructure inspection</li>
+              <li>Soil sampling and weed detection missions</li>
+              <li>Water level and pasture monitoring</li>
+            </ul>
+            <p>This research complements the <a href="rhec-slip-compensation.html">slip-compensating trajectory tracking</a> work, together forming a complete autonomy stack from high-level mission planning down to low-level motion control for off-road wheeled mobile robots.</p>
+
+            <nav class="project-nav">
+              <a href="multivariate-learning.html">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+                Previous: Multivariate Learning
+              </a>
+              <a href="rhec-slip-compensation.html" class="project-nav__next">
+                Next: Slip-Compensating Control
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </a>
+            </nav>
+          </div>
+          
+          <aside class="project-sidebar">
+            <div class="sidebar-section">
+              <h3>Technologies</h3>
+              <div class="sidebar-tags">
+                <span class="tag">MATLAB</span>
+                <span class="tag">Python</span>
+                <span class="tag">ROS</span>
+                <span class="tag">PRM Planning</span>
+                <span class="tag">ATSP</span>
+                <span class="tag">Clothoid Curves</span>
+                <span class="tag">QGIS</span>
+              </div>
+            </div>
+            
+            <div class="sidebar-section">
+              <h3>Key Concepts</h3>
+              <ul class="sidebar-list">
+                <li>Energy Cost of Motion Modelling</li>
+                <li>Probabilistic Roadmaps</li>
+                <li>Asymmetric TSP</li>
+                <li>Kinematic Pose Sampling</li>
+                <li>Clothoid Path Generation</li>
+                <li>Terrain-aware Planning</li>
+                <li>Orienteering Problems</li>
+              </ul>
+            </div>
+            
+            <div class="sidebar-section">
+              <h3>Key Publications</h3>
+              <div class="sidebar-publications">
+                <div class="sidebar-pub">
+                  <span class="sidebar-pub__title"><a href="../publications.html#pub-2020-orienteering-replenishment">The Orienteering Problem with Replenishment</a></span>
+                  <span class="sidebar-pub__venue">IEEE CASE 2020</span>
+                </div>
+                <div class="sidebar-pub">
+                  <span class="sidebar-pub__title"><a href="../publications.html#pub-2019-energy-aware-mission">Energy Aware Mission Planning for WMRs on Uneven Terrains</a></span>
+                  <span class="sidebar-pub__venue">IFAC AGRICONTROL 2019</span>
+                </div>
+                <div class="sidebar-pub">
+                  <span class="sidebar-pub__title"><a href="../publications.html#pub-2019-motion-cost-terrains">Motion Cost Characterisation of an Omnidirectional WMR on Uneven Terrains</a></span>
+                  <span class="sidebar-pub__venue">IFAC CAMS 2019</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- <div class="sidebar-section">
+              <h3>Related Projects</h3>
+              <ul class="sidebar-list">
+                <li><a href="phd-thesis.html">PhD Thesis Overview</a></li>
+                <li><a href="rhec-slip-compensation.html">Slip-Compensating Control</a></li>
+                <li><a href="resource-aware-autonomy.html">Resource-Aware Autonomy</a></li>
+              </ul>
+            </div> -->
+          </aside>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <footer class="footer"><div class="container"><p>© 2026 Nathan Wallace.</p></div></footer>
+  <script src="../js/main.js"></script>
+</body>
+</html>

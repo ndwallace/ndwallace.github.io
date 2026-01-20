@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Robotic Eco-Cyber-Physical Systems - A framework for digital twins in smart farming.">
+  <title>Robotic Eco-Cyber-Physical Systems | Nathan Wallace</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
+  <!-- Below PHP versioning to workaround aggressive browser caching -->
+  <link rel="stylesheet" href="../css/style.css?<?php echo filemtime('../css/style.css') ?>"/>
+  <link rel="stylesheet" href="../css/project.css?<?php echo filemtime('../css/project.css') ?>"/>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤖</text></svg>">
+</head>
+<body>
+  <nav class="nav">
+    <div class="container nav__inner">
+      <a href="../index.html" class="nav__logo">Dr. Nathan Wallace</a>
+      <button class="nav__toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+      <ul class="nav__links">
+        <li><a href="../index.html#about" class="nav__link">About</a></li>
+        <li><a href="../index.html#education" class="nav__link">Education</a></li>
+        <li><a href="../index.html#skills" class="nav__link">Skills</a></li>
+        <li><a href="../projects.html" class="nav__link">Projects</a></li>
+        <li><a href="../publications.html" class="nav__link">Publications</a></li>
+        <li><a href="../index.html#contact" class="nav__link">Contact</a></li>
+        <li><a href="https://media.githubusercontent.com/media/ndwallace/CV/refs/heads/main/CV_NathanWallace.pdf" class="btn btn--small btn--primary">Resume</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <article class="project-detail">
+    <header class="project-hero">
+      <div class="container">
+        <a href="../projects.html" class="back-link">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+          All Projects
+        </a>
+        <div class="project-hero__inner">
+          <div class="project-hero__content">
+            <span class="project-hero__domain project-hero__domain--agriculture">Agriculture</span>
+            <h1>Robotics for Sustainable Smart Foraging</h1>
+            <p class="project-hero__summary">Developing a comprehensive framework for capturing and conveying environmental knowledge and dynamics through robotics-focused digital twins, applied to intelligent pasture monitoring for grazing livestock.</p>
+            <div class="project-hero__meta">
+              <div class="meta-item"><span class="meta-item__label">Role</span><span class="meta-item__value">Supervisor & Co-author</span></div>
+              <div class="meta-item"><span class="meta-item__label">Timeline</span><span class="meta-item__value">2023 – 2025</span></div>
+              <div class="meta-item"><span class="meta-item__label">Partners</span><span class="meta-item__value">Private (Philanthropic)</span></div>
+              <div class="meta-item"><span class="meta-item__label">Team</span><span class="meta-item__value">5+ Engineers</span></div>
+            </div>
+          </div>
+          <div class="project-hero__image">
+            <div class="project-hero__image-wrapper">
+              <img src="../images/recps_condensed.jpg" alt="R-ECPS" style="margin-top: 0px;">
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    
+    <div class="project-content">
+      <div class="container">
+        <div class="project-content__inner">
+          <div class="project-body">
+            <h2>The Challenge</h2>
+            <p>Modern agriculture increasingly relies on data-driven decision making, but there's a gap between raw sensor data and actionable knowledge. Farmers need to understand not just what's happening in their fields right now, but how environmental conditions are changing over time and how those changes affect their operations.</p>
+            <p>Traditional digital twin approaches focus on replicating physical systems, but agricultural environments are fundamentally different—they're living ecosystems with complex dynamics that can't be captured through simple sensor readings alone.</p>
+
+            <h2>Adaptive Sampling for Intelligent Information Gathering</h2>
+            <p>Rather than following a predetermined grid pattern for collecting measurements, a common but often inefficient approach, the system we developed instead intelligently decides where to sample next based on what it has already learnt. The approach uses an information-guided sampling algorithm that balances exploring new areas against refining estimates in regions of high uncertainty or variation.</p>
+            <p>At the core of this is a Multi-quantity Gaussian Process (MQGP) that we developed to simultaneously map pasture height while learning correlations with other environmental data. In this application, the system tested whether terrain elevation was predictive of pasture growth—evaluating the hypothesis in real-time as it collected measurements.</p>
+            <p>Field trials on a 50x50 metre paddock demonstrated the system could produce accurate pasture maps from just 30 strategically-placed samples. The algorithm successfully quantified the correlation between elevation and pasture height (finding it to be weak in this case), while still maintaining mapping performance comparable to traditional grid-based approaches that would require many more measurements.</p>
+
+            <figure class="project-image">
+              <video src="../videos/pye_sampling_ssf.mp4" style="width: 100%; aspect-ratio: 16 / 9;"
+                   autoplay muted loop playsinline></video>
+              <figcaption>Video of autonomous intelligent pasture mapping, collecting discrete pasture height measurements and building biomass estimate using a multi-task Gaussian process.</figcaption>
+            </figure>
+
+            <h2>The R-ECPS Concept</h2>
+            <p>Building upon the foundations of our intelligent information gathering strategy, we explored how to address the challenge of quantifying and integrating this information within the broader operational ecosystem. This lead us to develop the concept of a "Robotic Eco-Cyber-Physical System" (R-ECPS)—a framework that adapts the ECPS framework specifically for robotic applications in agriculture.</p>
+
+            <p>A key innovation is the digital twin control cycle that extends the traditional robotic sense-plan-act paradigm, incorporating the fact that simulation and learning occur continuously throughout the cycle, enabling the system to test interventions virtually before physical deployment.</p>
+            <p>The preliminary R-ECPS system integrates robotics, simulation, and ecosystem modelling through four key components:</p>
+
+            <ul>
+              <li><strong>Digital Testbed</strong> — A complete simulation pipeline (QGIS → Blender → Gazebo) enabling offline testing of algorithms in virtual replicas of real paddocks before field deployment.</li>
+              
+              <li><strong>Robotic Sensing & Mapping</strong> — The Swagbot platform autonomously collects pasture height and NDVI data using depth and multispectral cameras, generating high-resolution spatial maps with uncertainty estimates via Gaussian Process modelling.</li>
+              
+              <li><strong>Nutritional Landscape Modelling</strong> — Sensor data is converted into "nutritional optimality maps" by combining height and NDVI values to estimate protein and metabolisable energy content, representing pasture as livestock experience it.</li>
+              
+              <li><strong>Foraging Behaviour Simulation</strong> — Integration with the Munch collective foraging model predicts cattle movement patterns based on the nutritional landscape, identifying areas at risk of overgrazing.</li>
+            </ul>
+
+            <p>The system employs a modular ROS/Docker architecture with containerised services for testbed, mapping, and simulation, enabling distributed deployment and independent component development. This preliminary implementation demonstrates integration feasibility, with real-time livestock detection, autonomous herding, and closed-loop control planned for future development.</p>
+
+            <figure class="project-image">
+              <img src="../images/recps_showcase.jpg" alt="Overview of R-ECPS structure, along with Swagbot platform and gathered environment data." style="margin-top: 0px;">
+              <figcaption>Overview of R-ECPS structure, along with Swagbot platform and gathered environment data.</figcaption>
+            </figure>
+
+            <h2>My Contribution</h2>
+            <p>My primary contributions centred on robotics system development, integration, and research supervision:</p>
+
+            <ul>
+              <li><strong>Robot Platform & Systems</strong> — Development of the Swagbot platform including swerve-steer kinematics, GNC stack, sensor integration (depth and multispectral cameras), and ROS/Docker architecture for modular deployment.</li>
+              
+              <li><strong>Digital Testbed</strong> — Gazebo simulation environment setup and world generation pipeline (QGIS → Blender → Gazebo), enabling safe algorithm testing before field deployment.</li>
+              
+              <li><strong>System Integration</strong> — Integration of adaptive sampling algorithms with Swagbot navigation, connection of sensing, mapping, and foraging simulation components through ROS, and field trial deployment coordination.</li>
+              
+              <li><strong>Research Supervision</strong> — Provided mentorship and supervision to the research team.</li>
+            </ul>
+
+            <h2>Results & Impact</h2>
+            <p>Field trials demonstrated both the adaptive sampling approach and the R-ECPS framework integration. The adaptive sampling algorithm achieved accurate pasture mapping from strategically-placed samples, successfully quantifying correlations between environmental parameters (e.g., elevation and pasture height) while reducing measurement requirements compared to traditional grid-based approaches.</p>
+
+            <p>The R-ECPS proof-of-concept integrated autonomous robotic sensing, spatial modelling, nutritional landscape generation, and foraging behaviour simulation. Key achievements include a digital testbed enabling simulation-to-reality workflow, modular ROS/Docker architecture, and high-resolution pasture maps with uncertainty quantification.</p>
+
+            <p>Published in the Journal of Field Robotics (Impact Factor: 5.2), the R-ECPS framework provides a structured approach for robotics-focussed digital twins in agriculture. The modular architecture enables ongoing enhancements including real-time livestock detection, autonomous herding, and weed detection. Both the adaptive sampling methodology and R-ECPS framework are being applied to ongoing agricultural robotics projects.</p>
+
+            <nav class="project-nav">
+              <a href="gnc-system.html">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+                Previous: GNC System
+              </a>
+              <a href="multivariate-learning.html" class="project-nav__next">
+                Next: Multivariate Learning
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </a>
+            </nav>
+          </div>
+          
+          <aside class="project-sidebar">
+            <div class="sidebar-section">
+              <h3>Technologies</h3>
+              <div class="sidebar-tags">
+                <span class="tag">Python</span>
+                <span class="tag">Gaussian Processes</span>
+                <span class="tag">ROS</span>
+                <span class="tag">Digital Twins</span>
+                <span class="tag">Spatial Modelling</span>
+                <span class="tag">Gazebo</span>
+                <span class="tag">Docker</span>
+                <span class="tag">Blender</span>
+                <span class="tag">QGIS</span>
+              </div>
+            </div>
+            
+            <div class="sidebar-section">
+              <h3>Key Outcomes</h3>
+              <ul class="sidebar-list">
+                <li>JFR publication (IF: 5.2)</li>
+                <li>Adaptive sampling strategy implemented and demonstrated.</li>
+                <li>Novel R-ECPS framework</li>
+                <li>Active industry deployment</li>
+                <li>PhD student supervised</li>
+              </ul>
+            </div>
+            
+            <div class="sidebar-section">
+              <h3>Related Publications</h3>
+              <div class="sidebar-publications">
+                <div class="sidebar-pub">
+                  <span class="sidebar-pub__title"><a href="../publications.html#pub-2025-eco-cyber-physical-systems">A Framework to Enable Eco-Cyber-Physical Systems for Robotics-Focused Digital Twins in Smart Farming</a></span>
+                  <span class="sidebar-pub__venue">Journal of Field Robotics, 2025</span>
+                </div>
+                <div class="sidebar-pub">
+                  <span class="sidebar-pub__title"><a href="../publications.html#pub-2024-automated-environmental-testing">Automated Testing of Spatially-Dependent Environmental Hypotheses through Active Transfer Learning</a></span>
+                  <span class="sidebar-pub__venue">IEEE ICRA 2024</span>
+                </div>
+                <div class="sidebar-pub">
+                  <span class="sidebar-pub__title"><a href="../publications.html#pub-2024-robotic-sampling-pasture">Ground Robotic Sampling System for Intelligent Pasture Mapping</a></span>
+                  <span class="sidebar-pub__venue">ACRA 2024</span>
+                </div>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <footer class="footer"><div class="container"><p>© 2026 Nathan Wallace.</p></div></footer>
+  <script src="../js/main.js"></script>
+</body>
+</html>

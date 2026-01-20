@@ -1,0 +1,53 @@
+{
+  "categories": [
+    {
+      "id": "technical",
+      "title": "Technical",
+      "icon": "code",
+      "skills": [
+        { "name": "Python", "progress": 100 },
+        { "name": "ROS", "progress": 100 },
+        { "name": "MATLAB", "progress": 100 },
+        { "name": "GazeboSim", "progress": 100 },
+        { "name": "Bash", "progress": 100 },
+        { "name": "Git", "progress": 100 },
+        { "name": "Multi-Sensor Integration", "progress": 80 },
+        { "name": "C++", "progress": 80 },
+        { "name": "C", "progress": 60 }
+      ]
+    },
+    {
+      "id": "research",
+      "title": "Research",
+      "icon": "search",
+      "skills": [
+        { "name": "Path Planning & Control", "progress": 100 },
+        { "name": "Mission Autonomy", "progress": 100 },
+        { "name": "GNC Systems", "progress": 100 },
+        { "name": "Academic Publishing", "progress": 100 },
+        { "name": "LaTeX", "progress": 100 },
+        { "name": "Grant Writing", "progress": 80 },
+        { "name": "Academic Mentorship", "progress": 80 }
+      ]
+    },
+    {
+      "id": "leadership",
+      "title": "Leadership",
+      "icon": "users",
+      "skills": [
+        { "name": "Field Operations", "progress": 100 },
+        { "name": "Technical Communication", "progress": 100 },
+        { "name": "Team Management", "progress": 80 },
+        { "name": "Stakeholder Engagement", "progress": 80 },
+        { "name": "Student Supervision", "progress": 80 }
+      ]
+    }
+  ],
+  "levelThresholds": {
+    "five": 99,
+    "four": 79,
+    "three": 59,
+    "two": 39,
+    "one": 19
+  }
+}

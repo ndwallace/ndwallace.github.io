@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Scarlet-β: Mission-level autonomy for the Buccaneer Main Mission cubesat - A project by Nathan Wallace.">
+  <title>Scarlet-β: Satellite Mission Autonomy | Nathan Wallace</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
+  <!-- Below PHP versioning to workaround aggressive browser caching -->
+  <link rel="stylesheet" href="../css/style.css?<?php echo filemtime('../css/style.css') ?>"/>
+  <link rel="stylesheet" href="../css/project.css?<?php echo filemtime('../css/project.css') ?>"/>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤖</text></svg>">
+</head>
+<body>
+  <nav class="nav">
+    <div class="container nav__inner">
+      <a href="../index.html" class="nav__logo">Dr. Nathan Wallace</a>
+      <button class="nav__toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+      <ul class="nav__links">
+        <li><a href="../index.html#about" class="nav__link">About</a></li>
+        <li><a href="../index.html#education" class="nav__link">Education</a></li>
+        <li><a href="../index.html#skills" class="nav__link">Skills</a></li>
+        <li><a href="../projects.html" class="nav__link">Projects</a></li>
+        <li><a href="../publications.html" class="nav__link">Publications</a></li>
+        <li><a href="../index.html#contact" class="nav__link">Contact</a></li>
+        <li><a href="https://media.githubusercontent.com/media/ndwallace/CV/refs/heads/main/CV_NathanWallace.pdf" class="btn btn--small btn--primary">Resume</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <article class="project-detail">
+    <header class="project-hero">
+      <div class="container">
+        <a href="../projects.html" class="back-link">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+          All Projects
+        </a>
+        <div class="project-hero__inner">
+          <div class="project-hero__content">
+            <span class="project-hero__domain project-hero__domain--space">Space</span>
+            <h1>Scarlet-β: Satellite Mission Autonomy</h1>
+            <p class="project-hero__summary">Developing mission-level autonomy for a self- and Earth-inspection payload on the Defence Science Technology Group's Buccaneer Main Mission cubesat, enabling intelligent scheduling of imaging operations based on predicted ground-site visibility.</p>
+            <div class="project-hero__meta">
+              <div class="meta-item"><span class="meta-item__label">Role</span><span class="meta-item__value">Project/Research Lead</span></div>
+              <div class="meta-item"><span class="meta-item__label">Timeline</span><span class="meta-item__value">2023 – Present</span></div>
+              <div class="meta-item"><span class="meta-item__label">Partners</span><span class="meta-item__value">SmartSat CRC, DSTG</span></div>
+              <div class="meta-item"><span class="meta-item__label">Team</span><span class="meta-item__value">2 Engineers</span></div>
+            </div>
+          </div>
+          <div class="project-hero__image">
+            <div class="project-hero__image-wrapper">
+              <img src="../images/sb2_mission_vis.png" alt="Scarlet-β" style="margin-top: 0px;">
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+    <div class="project-content">
+      <div class="container">
+        <div class="project-content__inner">
+          <div class="project-body">
+            <h2>The Challenge</h2>
+            <p>As missions continue to grow in scope and complexity, there is an increasing need for constraint-aware autonomy in satellite operations. This is particularly relevant for agile Earth-observation satellites, where judicious management of resources over the mission horizon is essential to ensure the best quality imagery can be captured and downlinked.</p>
+            <p>Such satellites are limited by factors such as communications bandwidth, availability and latency, on-board energy and data storage limits, and dynamic constraints on the satellite's motion and mobility. The Buccaneer Main Mission, equipped with the Maneuverable Antenna and Terrestrial Imaging System (MANTIS) payload for self- and Earth-inspection, needed autonomous decision-making to maximise its scientific return within these constraints.</p>
+            <p>The challenge was to develop an autonomous mission planner that could intelligently schedule imaging operations, balancing these competing objectives without human intervention.</p>
+
+            <figure class="project-image">
+              <img src="../images/bmm_mantis.png" alt="The CAD models of the Buccaneer Main Mission satellite (right) and MANTIS payload (left)." style="margin-top: 0px;">
+              <figcaption>CAD models of the Buccaneer Main Mission 6U cubesat with MANTIS payload</figcaption>
+            </figure>
+
+            <h2>My Contribution</h2>
+            <p>I led the R&D effort for both phases of this project, taking it from initial concept through to successful integration with the orbiting satellite. Key contributions included:</p>
+            <ul>
+              <li><strong>Mathematical modelling</strong> — Developed models of the satellite-Earth-Sun system for predicting ground-site visibility and estimating image capture utility</li>
+              <li><strong>Algorithm development</strong> — Designed and implemented a modified Monte-Carlo Tree Search (MCTS) with heuristic-weighted action selection for efficient, any-time mission plan generation</li>
+              <li><strong>Simulation framework</strong> — Built a comprehensive digital twin for algorithm development and validation</li>
+              <li><strong>System integration</strong> — Worked with DSTG to successfully integrate the mission planner with the MANTIS engineering model and the satellite engineering and flight models</li>
+              <li><strong>Stakeholder management</strong> — Liaised with DSTG and SmartSat for requirements capture, scope definition, technical roadmap development, and integration with the satellite and ground station systems.</li>
+            </ul>
+
+            <figure class="project-image">
+              <img src="../images/sb2_mosaic_censor.jpg" alt="Scarlet-β" style="margin-top: 0px;">
+              <figcaption>Clockwise from top left: MANTIS engineering model (EM) lab test setup, myself and T. I. posing with MANTIS, MANTIS EM self-image calibration test, and a planned Earth-image of Perth taken from orbit by the satellite using the MANTIS payload.</figcaption>
+            </figure>
+
+            <h2>Technical Approach</h2>
+            <p>The mission autonomy system operates as a goal-oriented planner. Given high-level objectives (e.g., "image these ground sites" or "perform self-inspection"), it generates detailed action sequences that satisfy the satellite's operational constraints.</p>
+            <p>The core algorithm uses Monte-Carlo Tree Search, modified to handle the unique characteristics of satellite operations:</p>
+            <ul>
+              <li>Long planning horizons (multiple orbits)</li>
+              <li>Continuous action spaces discretised into meaningful operations</li>
+              <li>Hard constraints on power and data storage</li>
+              <!-- <li>Uncertainty in ground-site weather and visibility</li> -->
+            </ul>
+            <p>The system predicts future states using orbital mechanics models and generates plans that can be executed autonomously.</p>
+
+            <figure class="project-image">
+              <img src="../images/sb2_systemarch.png" alt="Scarlet-β" style="margin-top: 0px;">
+              <figcaption>Mission planning system architecture showing the MCTS-based planner</figcaption>
+            </figure>
+
+            <h2>Results & Impact</h2>
+            <p>Phase 1 delivered a working mission planner, leveraging the mathematical modelling to generate efficient mission plans, and validating via numerical testing in simulation, demonstrating substantial performance improvements. This success led to securing $450k in funding for Phase 2, which focused on integration with the satellite flight model in Low-Earth orbit.</p>
+            <p>The work has been presented at two SmartSat-funded local conferences and two leading international space conferences (i-SAIRAS 2024 and IAC 2025). The algorithmic approaches developed have broader applications in resource-constrained autonomous systems beyond space.</p>
+
+            <h2>Current Status</h2>
+            <p>Phase 2 has successfully demonstrated integration with the Buccaneer Main Mission satellite currently in orbit. The mission planner is now part of the operational toolkit for the MANTIS payload, representing one of the first demonstrations of goal-oriented mission autonomy on an Australian cubesat.</p>
+
+            <nav class="project-nav">
+              <a href="isam.html" class="project-nav__next">
+                Next: ISAM
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </a>
+            </nav>
+          </div>
+          
+          <aside class="project-sidebar">
+            <div class="sidebar-section">
+              <h3>Technologies</h3>
+              <div class="sidebar-tags">
+                <span class="tag">Python</span>
+                <span class="tag">MCTS</span>
+                <span class="tag">Orbital Mechanics</span>
+                <span class="tag">Mission Planning</span>
+                <span class="tag">Optimisation</span>
+                <span class="tag">Simulation</span>
+              </div>
+            </div>
+            
+            <div class="sidebar-section">
+              <h3>Key Outcomes</h3>
+              <ul class="sidebar-list">
+                <li>$450k Phase 2 funding secured</li>
+                <li>Integrated with orbiting satellite</li>
+                <li>Presented at IAC 2025</li>
+                <li>Presented at i-SAIRAS 2024</li>
+              </ul>
+            </div>
+            
+            <div class="sidebar-section">
+              <h3>Related Publications</h3>
+              <div class="sidebar-publications">
+                <div class="sidebar-pub">
+                  <span class="sidebar-pub__title"><a href="../publications.html#pub-2025-distributed-mission-planning">Distributed Autonomous Mission Planning for Resource-Constrained Satellites</a></span>
+                  <span class="sidebar-pub__venue">IAC 2025</span>
+                </div>
+                <div class="sidebar-pub">
+                  <span class="sidebar-pub__title"><a href="../publications.html#pub-2024-payload-autonomy-satellites">Goal-oriented Payload Autonomy of Satellite Systems</a></span>
+                  <span class="sidebar-pub__venue">i-SAIRAS 2024</span>
+                </div>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <footer class="footer"><div class="container"><p>© 2026 Nathan Wallace.</p></div></footer>
+  <script src="../js/main.js"></script>
+</body>
+</html>
